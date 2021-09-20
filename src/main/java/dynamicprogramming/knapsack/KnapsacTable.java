@@ -1,6 +1,6 @@
-package dynamicprogramming;
+package dynamicprogramming.knapsack;
 
-import java.util.Arrays;
+import util.InputReader;
 
 public class KnapsacTable {
 
@@ -38,12 +38,24 @@ public class KnapsacTable {
 
     public static void main(String[] args) {
         int [] value = new int [] {1,6,18,22,28};
-        int [] weight = new int [] {1,2,5,6,7};
+        int [] weight = new int [] {2,3,5,6,7};
+        int capa = 11;
 
-        KnapsacTable kp = new KnapsacTable(value,weight,12);
+        String instance = "data/knapsack/knapsackA";
+        InputReader reader = new InputReader(instance);
+        int n = reader.getInt();
+        capa = reader.getInt();
+        value = new int[n];
+        weight = new int[n];
+        for (int i = 0; i < n; i++) {
+            value[i] = reader.getInt();
+            weight[i] = reader.getInt();
+        }
+
+        KnapsacTable kp = new KnapsacTable(value,weight,capa);
         int best = kp.solve();
         System.out.println("best objective:" + best);
-        assert (best == 46);
+        //assert (best == 40);
 
     }
 
