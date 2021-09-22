@@ -25,11 +25,11 @@ class RangePartitioningTable {
         prefixSum = new int[n];
         prefixSum[0] = input[0];
         for (int i = 1; i < n; i++) {
-            prefixSum[i] = prefixSum[i - 1] + input[i];
+            prefixSum[i] = prefixSum[i - 1] + input[i]; // input[0]+....+input[i]
         }
     }
 
-    // compute input[start]+input[start-1] ... +input[end]
+    // compute input[start]+input[start+1] ... +input[end]
     private int sumInterval(int start, int end) {
         return prefixSum[end] - prefixSum[start - 1];
     }
@@ -65,9 +65,10 @@ class RangePartitioningTable {
     }
 
     public static void main(String[] args) {
-        int[] input = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
-        //int [] input = new int[] {1, 2, 6, 3, 1, 4, 5, 6, 7, 8, 5};
-        RangePartitioningTable rp = new RangePartitioningTable(input, 5);
+
+        //int[] input = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int [] input = new int[] {1, 2, 6, 3, 1, 4, 5, 6, 7, 8, 5};
+        RangePartitioningTable rp = new RangePartitioningTable(input, 4);
         int objective = rp.solve();
         System.out.println("cost of max partition:" + objective);
         rp.printCache();

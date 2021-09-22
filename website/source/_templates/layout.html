@@ -1,0 +1,31 @@
+{# layout.html #}
+{% extends "!layout.html" %}
+
+{% set css_files = css_files + ['_static/css/custom.css'] %}
+
+{%- block extrahead %}
+{{ super() }}
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-126664504-1']);
+  _gaq.push(['_trackPageview']);
+</script>
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+<div class="footer">
+    <script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Authors: Pierre Schaus & Guillaume Derval. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+{% endblock %}
+
+
