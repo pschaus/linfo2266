@@ -9,7 +9,7 @@ Partie 1 | Dynamic Programming
 Slides and video (keynote)
 
 * `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyr-4iiykzoz6nMb0gEI4tjR>`_
-* `Restructuration <https://www.icloud.com/keynote/0C9qyvWomr8eHMmHUELTMbC7A#part1-bilan>`_
+* `Slides <https://www.icloud.com/keynote/0C9qyvWomr8eHMmHUELTMbC7A#part1-bilan>`_
 
 
 
