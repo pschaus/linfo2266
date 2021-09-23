@@ -43,7 +43,9 @@ Longest Increasing Subsequence
 Given a sequence of integers, the problem asks to find the longest (strictly) increasing subsequence.
 A *subsequence* is a subset of the elements of a sequence and appearing in the same order.
 
-.. csv-table:: A sequence of integers with a longest increasing subsequence in bold.
+Below is a sequence of integers with a longest increasing subsequence in bold:
+
+.. csv-table::
 
     **0**,8,4,12,**2**,10,**6**,14,1,**9**,5,**13**,3,11,7,**15**
 
@@ -51,3 +53,16 @@ A *subsequence* is a subset of the elements of a sequence and appearing in the s
 #. Write a pseudocode for your algorithm. What is its time and space complexity?
 #. Can you model your solution as a longest-path problem in a DAG?
 #. (Bonus) Implement and verify your algorithm on `LeetCode <https://leetcode.com/problems/longest-increasing-subsequence/>`_.
+
+Maximum Height Box-Stacking
+"""""""""""""""""""""""""""""""""""""""
+
+You are given a set of boxes :math:`B = \{(w_1,d_1,h_1),\ldots,(w_n,d_n,h_n)\}`, where :math:`w_i,d_i,h_i` denote respectively the width, depth and height of a box.
+The goal is to use them to build the highest stack possible.
+
+Box :math:`j` can be placed on top of box :math:`i` if and only :math:`w_i \ge w_j \land d_i \ge d_j \land h_i \ge h_j`.
+In addition, **the boxes can be rotated** i.e. their dimensions can be permuted.
+
+#. Find a dynamic programming model for this problem and formulate the Bellman recurrence equations. Do you need to change the problem input first?
+#. Write a pseudocode for your algorithm. What is its time and space complexity?
+#. (Bonus) Implement and verify your algorithm on `LeetCode <https://leetcode.com/problems/maximum-height-by-stacking-cuboids/>`_.
