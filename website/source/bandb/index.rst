@@ -1,9 +1,12 @@
-.. _part2:
+.. _bandb:
 
 
 *************************************************************************************************
-Partie 1 | Branch and Bound
+Branch and Bound
 *************************************************************************************************
+
+Theory
+=======================================
 
 
 Slides and video (keynote)
@@ -14,13 +17,10 @@ Slides and video (keynote)
 
 
 
-Exercices
+Exercises
 =======================================
 
-.. note::
-   Vous devez faire ces exercices pour le mercredi de S2.
-
-Exercice 1.1.1
+Exercise name
 """"""""""""""
 
 TODO

@@ -9,11 +9,12 @@ LINFO2266: Advanced Algorithms for Optimization
 ###################################################
 
 .. toctree::
+   :numbered:
    :maxdepth: 2
 
    intro/index
-   part1/index
-   part2/index
+   dp/index
+   bandb/index
 
 .. Indices and tables
 .. ==================

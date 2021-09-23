@@ -1,10 +1,12 @@
-.. _part1:
+.. _dp:
 
 
 *************************************************************************************************
-Partie 1 | Dynamic Programming
+Dynamic Programming
 *************************************************************************************************
 
+Theory
+=======================================
 
 Slides and video (keynote)
 
@@ -13,13 +15,10 @@ Slides and video (keynote)
 
 
 
-Exercices
+Exercises
 =======================================
 
-.. note::
-   Vous devez faire ces exercices pour le mercredi de S2.
-
-Exercice 1.1.1
+Exercise name
 """"""""""""""
 
 TODO
