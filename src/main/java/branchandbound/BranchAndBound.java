@@ -1,18 +1,52 @@
 package branchandbound;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public abstract class BranchAndBound<N extends  Node> {
+public class BranchAndBound {
 
+
+    public static void minimize(OpenNodes openNode) {
+
+        double best = Double.MAX_VALUE;
+
+        while (!openNode.isEmpty()) {
+            Node n = openNode.remove();
+            if (n.isFeasible() && n.lowerBound() < best) {
+                best = n.lowerBound();
+                System.out.println("new best:"+best+" node:"+n);
+            }
+            else if (n.lowerBound() < best) {
+                for (Node child: n.children()) {
+                    openNode.add(child);
+                }
+            }
+        }
+    }
+}
+
+interface Node {
+    double lowerBound();
+    boolean isFeasible();
+    List<Node> children();
+}
+
+interface OpenNodes<N extends Node> {
+    void add(N n);
+    N remove();
+    boolean isEmpty();
+}
+
+class BestFirstOpenNodes<N extends  Node> implements OpenNodes<N> {
 
     PriorityQueue<N> queue;
 
-    public BranchAndBound(N root) {
-        queue = new PriorityQueue<N>(new Comparator<N>() {
+    BestFirstOpenNodes() {
+        queue = new PriorityQueue<N>(new Comparator<Node>() {
             @Override
-            public int compare(N o1, N o2) {
+            public int compare(Node o1, Node o2) {
                 double lb1 = o1.lowerBound();
                 double lb2 = o2.lowerBound();
                 if (lb1 < lb2) {
@@ -24,42 +58,23 @@ public abstract class BranchAndBound<N extends  Node> {
                 }
             }
         });
-        queue.add(root);
     }
 
-    abstract List<N> children(N node ,double best);
-
-    public void updateBest(N node) {
-
+    public void add(N n) {
+        queue.add(n);
     }
 
-
-    public void minimize() {
-        double best = Double.MAX_VALUE;
-
-        while (!queue.isEmpty()) {
-            N n = queue.poll();
-            if (n.isFeasible()) {
-                best = n.lowerBound();
-            }
-            else if (n.lowerBound() < best) {
-                queue.addAll(children(n,best));
-            }
-
-        }
+    public N remove() {
+        return queue.remove();
     }
 
-
-
-
+    @Override
+    public boolean isEmpty() {
+        return queue.isEmpty();
+    }
 }
 
-abstract class Node<T extends Node<T>> {
 
-    abstract double lowerBound();
-    abstract boolean isFeasible();
-
-}
 
 
 
