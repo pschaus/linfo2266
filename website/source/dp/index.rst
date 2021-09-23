@@ -18,6 +18,25 @@ Slides and video (keynote)
 Exercises
 =======================================
 
+Longest-Path in a Directed Acyclic Graph
+"""""""""""""""""""""""""""""""""""""""""""
+
+A *directed acyclic graph* (DAG) is a graph with directed edges (one way) which has no cycles.
+The figure below shows a DAG representing a set of tasks.
+Each of them has a duration and depends on other tasks which have to be completed before the task can be started.
+The longest path of this graph is called the **critical path** because it determines the total time needed to complete all tasks while respecting all dependencies.
+
+.. figure:: Pert_chart_colored.svg
+   :width: 400px
+
+   A PERT chart, a real-life application of DAGs. From `Wikipedia <https://en.wikipedia.org/wiki/Directed_acyclic_graph>`_.
+
+Given a set of vertices :math:`V = \{1,\ldots,n\}` and set of weighted edges :math:`E` where :math:`(i,j,w) \in E` if vertex :math:`i` has an edge to vertex :math:`j` of weight :math:`w`.
+You are asked to find the longest path connecting :math:`s` to :math:`t`, with :math:`s,t \in V` and provided that at least one such path exists.
+
+#. Find a dynamic programming model for this problem and formulate the Bellman recurrence equations.
+#. What do you need to change to solve the shortest-path problem on a DAG?
+
 Longest Increasing Subsequence
 """""""""""""""""""""""""""""""""""""""
 
@@ -30,4 +49,5 @@ A *subsequence* is a subset of the elements of a sequence and appearing in the s
 
 #. Find a dynamic programming model for this problem and formulate the Bellman recurrence equations.
 #. Write a pseudocode for your algorithm. What is its time and space complexity?
+#. Can you model your solution as a longest-path problem in a DAG?
 #. (Bonus) Implement and verify your algorithm on `LeetCode <https://leetcode.com/problems/longest-increasing-subsequence/>`_.
