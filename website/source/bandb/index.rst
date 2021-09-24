@@ -26,8 +26,8 @@ Knapsack Problem
 Given the following knapsack instance:
 
 .. math::
-    \textbf{maximize} \qquad & 25 x_1 + 18 x_2 + 36 x_3 \\
-    \textbf{subject to} \qquad & 5 x_1 + 6 x_2 + 4 x_3 \leq 11 \\
+    \max \quad & 25 x_1 + 18 x_2 + 36 x_3 \\
+    \text{subject to} \quad & 5 x_1 + 6 x_2 + 4 x_3 \leq 11 \\
     & x_i \in \{0, 1\}
 
 #. Draw the brute-force search tree for this problem, with the given variable ordering and left (resp. right) corresponding to 0 (resp. 1) assignments.
