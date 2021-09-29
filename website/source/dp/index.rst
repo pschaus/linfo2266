@@ -35,6 +35,7 @@ Given a set of vertices :math:`V = \{1,\ldots,n\}` and set of weighted edges :ma
 You are asked to find the longest path connecting :math:`s` to :math:`t`, with :math:`s,t \in V` and provided that at least one such path exists.
 
 #. Find a dynamic programming model for this problem and formulate the Bellman recurrence equations.
+#. What is the time and space complexity of an algorithm computing these recurrence equations?
 #. What do you need to change to solve the shortest-path problem on a DAG?
 
 Longest Increasing Subsequence
@@ -60,9 +61,9 @@ Maximum Height Box-Stacking
 You are given a set of boxes :math:`B = \{(w_1,d_1,h_1),\ldots,(w_n,d_n,h_n)\}`, where :math:`w_i,d_i,h_i` denote respectively the width, depth and height of a box.
 The goal is to use them to build the highest stack possible.
 
-Box :math:`j` can be placed on top of box :math:`i` if and only :math:`w_i \ge w_j \land d_i \ge d_j \land h_i \ge h_j`.
+Box :math:`j` can be placed on top of box :math:`i` if and only if :math:`w_i \ge w_j \land d_i \ge d_j \land h_i \ge h_j`.
 In addition, **the boxes can be rotated** i.e. their dimensions can be permuted.
 
-#. Find a dynamic programming model for this problem and formulate the Bellman recurrence equations. Do you need to change the problem input first?
+#. Find a dynamic programming model for this problem and formulate the Bellman recurrence equations. Do you need to adapt the problem input first?
 #. Write a pseudocode for your algorithm. What is its time and space complexity?
 #. (Bonus) Implement and verify your algorithm on `LeetCode <https://leetcode.com/problems/maximum-height-by-stacking-cuboids/>`_.
