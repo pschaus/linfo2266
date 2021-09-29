@@ -3,9 +3,8 @@ package branchandbound;
 import util.InputReader;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Arrays;
 import java.util.List;
-import java.util.PriorityQueue;
 
 public class BranchAndBoundKnapsack {
     public static void main(String[] args) {
@@ -13,13 +12,50 @@ public class BranchAndBoundKnapsack {
         int[] value = new int[]{1, 6, 18, 22, 28};
         int[] weight = new int[]{2, 3, 5, 6, 7};
         int capa = 11;
+        int n = value.length;
 
-        OpenNodes<NodeKnapsack> openNodes = new BestFirstOpenNodes<>();
+
+        String instance = "data/knapsack/knapsackA";
+        InputReader reader = new InputReader(instance);
+        n = reader.getInt();
+        capa = reader.getInt();
+        value = new int[n];
+        weight = new int[n];
+        for (int i = 0; i < n; i++) {
+            value[i] = reader.getInt();
+            weight[i] = reader.getInt();
+        }
+
+        // sort decreasing according to value/weight ratio
+        /*
+        sortValueOverWeight(value,weight);
+        for (int i = 0; i < n-1; i++) {
+            assert ((double) value[i]/weight[i] > (double) value[i-1]/weight[i+1]);
+        }*/
+
+
+        //OpenNodes<NodeKnapsack> openNodes = new BestFirstOpenNodes<>();
+        OpenNodes<NodeKnapsack> openNodes = new DepthFirstOpenNodes<>();
+
         NodeKnapsack root = new NodeKnapsack(null,value,weight,0,capa,-1,false);
         openNodes.add(root);
         BranchAndBound.minimize(openNodes);
 
 
+    }
+
+    private static void sortValueOverWeight(int [] value, int [] weight) {
+        int n = value.length;
+        double [][] item = new double[n][2];
+        for (int i = 0; i < n; i++) {
+            item[i][0] = value[i];
+            item[i][1] = weight[i];
+        }
+        Arrays.sort(item,(i1,i2)-> (i1[0]/i1[1] > i2[0]/i2[1]) ? -1 : 1 );
+        for (int i = 0; i < n; i++) {
+            value[i] = (int) item[i][0];
+            weight[i] = (int) item[i][1];
+        }
     }
 }
 
@@ -32,6 +68,7 @@ class NodeKnapsack implements Node {
     int index;
     boolean selected;
     NodeKnapsack parent;
+    double ub;
 
 
     // Node where item at index is selected the ones after are undecided
@@ -44,16 +81,36 @@ class NodeKnapsack implements Node {
         this.capaLeft = capaLeft;
         this.index = index;
         this.selected = selected;
+        this.ub = capacityRelaxUBound();
+        //this.ub = lpRelaxUBound();
     }
 
-    @Override
-    public double lowerBound() {
+    private double capacityRelaxUBound() {
         int valueUb = selectedValue;
         for (int i = index + 1; i < value.length; i++) {
             valueUb += value[i];
         }
-        System.out.println(valueUb);
-        return -valueUb; // maximization problem
+        return valueUb; // maximization problem
+    }
+
+    private double lpRelaxUBound() {
+        int valueUb = selectedValue;
+        int c = capaLeft;
+        for (int i = index + 1; i < value.length; i++) {
+            if (weight[i] < c) {
+                valueUb += value[i];
+                c -= weight[i];
+            } else {
+                valueUb += ((double) c)/weight[i] * value[i];
+                break;
+            }
+        }
+        return valueUb; // maximization problem
+    }
+
+    @Override
+    public double lowerBound() {
+        return -ub;
     }
 
     @Override
@@ -65,6 +122,12 @@ class NodeKnapsack implements Node {
     public List<Node> children() {
 
         List<Node> children = new ArrayList<>();
+        // do not select item at index+1
+        Node right = new NodeKnapsack(this, value, weight,
+                selectedValue,
+                capaLeft,
+                index + 1, false);
+        children.add(right);
         if (capaLeft >= weight[index+1]) {
             // select item at index+1
             Node left = new NodeKnapsack(this, value, weight,
@@ -73,13 +136,6 @@ class NodeKnapsack implements Node {
                     index + 1, true);
             children.add(left);
         }
-
-        // do not select item at index+1
-        Node right = new NodeKnapsack(this, value, weight,
-                selectedValue,
-                capaLeft,
-                index + 1, false);
-        children.add(right);
         return children;
     }
 

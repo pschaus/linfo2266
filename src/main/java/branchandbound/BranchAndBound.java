@@ -1,30 +1,31 @@
 package branchandbound;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class BranchAndBound {
 
 
     public static void minimize(OpenNodes openNode) {
 
-        double best = Double.MAX_VALUE;
+        double upperBound = Double.MAX_VALUE;
+        int iter = 0;
 
         while (!openNode.isEmpty()) {
+            iter++;
             Node n = openNode.remove();
-            if (n.isFeasible() && n.lowerBound() < best) {
-                best = n.lowerBound();
-                System.out.println("new best:"+best+" node:"+n);
+            if (n.isFeasible() && n.lowerBound() < upperBound) {
+                upperBound = n.lowerBound();
+                System.out.println("new best:"+upperBound+" node:"+n);
             }
-            else if (n.lowerBound() < best) {
+            else if (n.lowerBound() < upperBound) {
                 for (Node child: n.children()) {
                     openNode.add(child);
                 }
             }
         }
+        System.out.println("#iter:"+iter);
     }
+
 }
 
 interface Node {
@@ -37,6 +38,7 @@ interface OpenNodes<N extends Node> {
     void add(N n);
     N remove();
     boolean isEmpty();
+    int size();
 }
 
 class BestFirstOpenNodes<N extends  Node> implements OpenNodes<N> {
@@ -71,6 +73,38 @@ class BestFirstOpenNodes<N extends  Node> implements OpenNodes<N> {
     @Override
     public boolean isEmpty() {
         return queue.isEmpty();
+    }
+
+    @Override
+    public int size() {
+        return queue.size();
+    }
+}
+
+class DepthFirstOpenNodes<N extends  Node> implements OpenNodes<N> {
+
+    Stack<N> stack;
+
+    DepthFirstOpenNodes() {
+        stack = new Stack<N>();
+    }
+
+    public void add(N n) {
+        stack.push(n);
+    }
+
+    public N remove() {
+        return stack.pop();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return stack.isEmpty();
+    }
+
+    @Override
+    public int size() {
+        return stack.size();
     }
 }
 

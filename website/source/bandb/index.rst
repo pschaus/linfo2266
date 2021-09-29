@@ -9,12 +9,8 @@ Theory
 =======================================
 
 
-Slides and video (keynote)
-
-* `Introduction <https://www.icloud.com/keynote/0jTHGv9VcBJNqr701X0LiSSeQ#part1-intro>`_
-* `Séance Intermédiaire <https://www.icloud.com/keynote/037KCYIeXbULVFGRo7xLiY8fA#part1-exercices>`_
-* `Restructuration <https://www.icloud.com/keynote/0C9qyvWomr8eHMmHUELTMbC7A#part1-bilan>`_
-
+* `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyoMPDl66rUcQlkMHSGWENib>`_
+* `Slides <https://www.icloud.com/keynote/0JO4LJSpQik_9to_JZAys14mQ#02-branch-and-bound>`_
 
 
 Exercises
