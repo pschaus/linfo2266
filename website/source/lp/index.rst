@@ -5,6 +5,8 @@
 Linear Programming
 *************************************************************************************************
 
+* `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyoSSeucDx7FyUpMDjhc-Kyf>`_
+
 Theory
 =======================================
 
