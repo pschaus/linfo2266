@@ -17,6 +17,7 @@ LINFO2266: Advanced Algorithms for Optimization
    bandb/index
    lp/index
    lagrangian/index
+   colgen/index
 
 .. Indices and tables
 .. ==================
