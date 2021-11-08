@@ -1,0 +1,64 @@
+\subsection{Set Covering Problem}
+
+\begin{enumerate}
+    \item We introduce one Lagrangian multiplier for each constraint to obtain the Lagrangian relaxation:
+    \begin{equation}
+        \label{lagrangian-formula}
+        \min \sum_{i=1}^m c_i x_i + \sum_{j=1}^n \lambda_j \left( 1 - \sum_{\substack{i=1\\j \in S_i}}^m x_i \right)
+    \end{equation}
+    with $\lambda_j \ge 0, j \in \{1,\ldots,n\}$.
+    Note how we integrated the constraints: for any \textit{feasible} solution of the original problem, we will have
+    \begin{equation}
+        1 - \sum_{\substack{i=1\\j \in S_i}}^m x_i \le 0
+    \end{equation}
+    which means a \textit{negative} value will be added to the objective function and that we will thus obtain a \textit{lower bound} on the optimal value of the problem.
+    
+    
+    For clarity, we rewrite \cref{lagrangian-formula} as:
+    \begin{equation}
+    \label{lagrangian-formula-short}
+        \min \sum_{i=1}^m \left( c_i - \sum_{j \in S_i} \lambda_j \right) x_i + \sum_{j=1}^n \lambda_j
+    \end{equation}
+    For fixed values of the Lagrangian multipliers $\lambda_j$, we can obtain a lower bound by solving \cref{lagrangian-formula-short}.
+    This problem is very simple to solve if we notice that:
+    \begin{itemize}
+        \item each $x_i$ is multiplied by a fixed coefficient $\left(c_i - \sum_{j \in S_i} \lambda_j\right)$
+        \item the second term $\left(\sum_{j=1}^n \lambda_j\right)$ is constant
+    \end{itemize}
+    In order to minimize the objective function, it is sufficient to select the sets which have a negative coefficient:
+    \begin{equation}
+        x_i = \left\{ \begin{array}{lcl}
+         	1 && \text{if $c_i - \sum_{j \in S_i} \lambda_j \le 0$} \\
+        	0 && \text{otherwise.}
+         \end{array} \right.
+    \end{equation}
+    \item By applying exactly what we described above, we get a lower bound value of 4.2.
+    \item We adapt the subgradient procedure covered in the lectures for this particular problem, and for multiple Lagrange multipliers in \cref{subgradient}.
+    
+    \begin{algorithm}[h]
+    \begin{algorithmic}[1]
+    \STATE $\mathcal{L}^\ast \gets -\infty, k \gets 0, \mu_0 \gets 1$
+    \STATE $\lambda_{0,j} \gets 0, 1 \le j \le n$
+    \STATE $\mathcal{C}^\ast \gets \text{a trivial solution, or none}$
+    \WHILE{$\mu_k \ge \epsilon$}
+        \STATE Compute cover $\mathcal{C}_k$ with weights $\left(c_i - \sum_{j \in S_i} \lambda_{k,j}\right)$ for $1 \le i \le m$
+        \STATE $\mathcal{L}_k \gets value\left(\mathcal{C}_k\right) + \sum_{j=1}^n \lambda_{k,j}$
+        \IF{$\mathcal{L}_k > \mathcal{L}^\ast$}
+            \STATE $\mathcal{L}^\ast \gets \mathcal{L}_k$
+        \ENDIF
+        \IF{$value\left(\mathcal{C}_k\right) < value\left(\mathcal{C}^\ast\right)$}
+            \STATE $\mathcal{C}^\ast \gets \mathcal{C}_k$
+        \ENDIF
+        \IF{$\mathcal{L}^\ast = value\left(\mathcal{C}^\ast\right)$}
+            \STATE \textbf{break}
+        \ENDIF
+        \STATE $\lambda_{k+1,j} \gets \max \left(0, \lambda_{k,j} + \mu_k \left(1 - \sum_{\substack{i=1\\j\in S_i}}^m x_i \right)\right)$ for $1 \le j \le n$
+        \STATE $\mu_{k+1} \gets \frac{1}{k}$ (or another valid update rule)
+        \STATE $k \gets k+1$
+    \ENDWHILE
+    \RETURN $lb$
+    \end{algorithmic}
+    \caption{Subgradient procedure for the Set Covering Problem.}
+    \label{subgradient}
+    \end{algorithm}
+\end{enumerate}
