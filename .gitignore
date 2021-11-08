@@ -2,18 +2,29 @@
 .classpath
 .project
 .settings/
- 
+
 # Intellij
 .idea/
 *.iml
 *.iws
- 
+
 # Mac
 .DS_Store
- 
+
 # Maven
 log/
 target/
 
 # Sphinx
 website/build/
+
+# LaTeX
+*.ps
+*.log
+*.aux
+*.out
+*.dvi
+*.bbl
+*.blg
+*.bak
+*.synctex.gz
