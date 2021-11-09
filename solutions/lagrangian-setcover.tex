@@ -12,8 +12,8 @@
         1 - \sum_{\substack{i=1\\j \in S_i}}^m x_i \le 0
     \end{equation}
     which means a \textit{negative} value will be added to the objective function and that we will thus obtain a \textit{lower bound} on the optimal value of the problem.
-    
-    
+
+
     For clarity, we rewrite \cref{lagrangian-formula} as:
     \begin{equation}
     \label{lagrangian-formula-short}
@@ -34,10 +34,10 @@
     \end{equation}
     \item By applying exactly what we described above, we get a lower bound value of 4.2.
     \item We adapt the subgradient procedure covered in the lectures for this particular problem, and for multiple Lagrange multipliers in \cref{subgradient}.
-    
+
     \begin{algorithm}[h]
     \begin{algorithmic}[1]
-    \STATE $\mathcal{L}^\ast \gets -\infty, k \gets 0, \mu_0 \gets 1$
+    \STATE $\mathcal{L}^\ast \gets -\infty, k \gets 1, \mu_0 \gets 1$
     \STATE $\lambda_{0,j} \gets 0, 1 \le j \le n$
     \STATE $\mathcal{C}^\ast \gets \text{a trivial solution, or none}$
     \WHILE{$\mu_k \ge \epsilon$}
