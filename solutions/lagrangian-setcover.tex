@@ -46,7 +46,7 @@
         \IF{$\mathcal{L}_k > \mathcal{L}^\ast$}
             \STATE $\mathcal{L}^\ast \gets \mathcal{L}_k$
         \ENDIF
-        \IF{$value\left(\mathcal{C}_k\right) < value\left(\mathcal{C}^\ast\right)$}
+        \IF{$\mathcal{C}_k$ is feasible and $value\left(\mathcal{C}_k\right) < value\left(\mathcal{C}^\ast\right)$}
             \STATE $\mathcal{C}^\ast \gets \mathcal{C}_k$
         \ENDIF
         \IF{$\mathcal{L}^\ast = value\left(\mathcal{C}^\ast\right)$}
