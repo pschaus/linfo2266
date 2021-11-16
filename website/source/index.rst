@@ -19,6 +19,7 @@ LINFO2266: Advanced Algorithms for Optimization
    lagrangian/index
    colgen/index
    cp/index
+   ls/index
 
 .. Indices and tables
 .. ==================
