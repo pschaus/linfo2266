@@ -42,7 +42,7 @@
     \STATE $\mathcal{C}^\ast \gets \text{a trivial solution, or none}$
     \WHILE{$\mu_k \ge \epsilon$}
         \STATE Compute cover $\mathcal{C}_k$ with weights $\left(c_i - \sum_{j \in S_i} \lambda_{k,j}\right)$ for $1 \le i \le m$
-        \STATE $\mathcal{L}_k \gets value\left(\mathcal{C}_k\right) + \sum_{j=1}^n \lambda_{k,j}$
+        \STATE $\mathcal{L}_k \gets lagrangianValue\left(\mathcal{C}_k\right)$ (given by \cref{lagrangian-formula-short})
         \IF{$\mathcal{L}_k > \mathcal{L}^\ast$}
             \STATE $\mathcal{L}^\ast \gets \mathcal{L}_k$
         \ENDIF
@@ -56,7 +56,7 @@
         \STATE $\mu_{k+1} \gets \frac{1}{k}$ (or another valid update rule)
         \STATE $k \gets k+1$
     \ENDWHILE
-    \RETURN $lb$
+    \RETURN $\mathcal{L}^\ast$ and $\mathcal{C}^\ast$
     \end{algorithmic}
     \caption{Subgradient procedure for the Set Covering Problem.}
     \label{subgradient}
