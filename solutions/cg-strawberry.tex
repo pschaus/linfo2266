@@ -1,0 +1,65 @@
+\subsection{Strawberry Problem}
+
+In this approach, a column represents a single greenhouse placed at a precise location on the field.
+Formally, each greenhouse is a pattern $p$ defined by a matrix $G_{p}$ where
+\begin{equation}
+    G_{pij} = \left\{ \begin{array}{lcl}
+        1 && \text{if greenhouse }p\text{ covers cell }(i,j), \\
+        0 && \text{otherwise}.
+    \end{array} \right.
+\end{equation}
+for all $1 \le i \le A$ and $1 \le j \le B$.
+We suppose that $G_{pij}$ covers a rectangular area of the field.
+
+We associate a variable $x_p$ to each pattern to decide whether it is taken in the solution or not.
+This allows us to write the objective function and the constraints of the problem:
+\begin{align}
+    \min &\sum_p x_p \left( C_g + \sum_{i=1}^A \sum_{j=1}^B G_{pij} C_u \right) & \label{objective}\\
+    &\sum_p x_p G_{pij} \le 1 & 1 \le i \le A, 1 \le j \le B \label{no-overlap}\\
+    &\sum_p x_p G_{pij} \ge s(i,j) & 1 \le i \le A, 1 \le j \le B \label{cover-strawberries}
+\end{align}
+
+In \cref{objective}, for each selected greenhouse, we add the fixed cost $C_g$ plus the unit cost $C_u$ for each cell covered by it.
+\Cref{no-overlap} states that no two selected greenhouses can both cover a cell.
+Similarly, \cref{cover-strawberries} ensures that all strawberries are covered by a greenhouse.
+
+Since the number of possible greenhouses is very large, we will start with a small number of them
+and then introduce new promising patterns, based on intermediate solutions.
+To initialize the algorithm, a simple idea would be to have one greenhouse covering each cell with a strawberry.
+
+We now formulate the \textit{pricing problem} which will find new interesting columns, if any.
+A column will be able to improve a current solution if it has a \textit{negative reduced cost}.
+As in the Simplex algorithm, the goal of the pricing problem is to find the column with the most negative reduced cost.
+\bigbreak
+\noindent\fbox{\begin{minipage}{\textwidth}
+Given a linear program in matrix form:
+\begin{align}
+    \min~ &c^\top x\\
+    &Ax \le b\\
+    &x \ge 0
+\end{align}
+and its dual linear program:
+\begin{align}
+    \max~ &b^\top y\\
+    &A^\top x \ge c\\
+    &y \ge 0
+\end{align}
+the reduced cost vector is given by:
+\begin{equation}
+    \overline{c} = c - A^\top y
+\end{equation}
+\end{minipage}}
+\bigbreak
+For a column $p$ of our problem, we obtain the following reduced cost:
+\begin{align}
+    \overline{c_p} &= C_g + \sum_{i=1}^A \sum_{j=1}^B G_{pij} C_u - \sum_{i=1}^A \sum_{j=1}^B \alpha_{ij} G_{pij} - \sum_{i=1}^A \sum_{j=1}^B \beta_{ij} (- G_{pij}) \\
+    &= C_g + \sum_{i=1}^A \sum_{j=1}^B G_{pij} \left( C_u - \alpha_{ij} + \beta_{ij} \right)
+\end{align}
+
+Finally, the pricing problem is given by:
+\begin{equation}
+    \min C_g + \sum_{i=1}^A \sum_{j=1}^B G_{ij} \left( C_u - \alpha_{ij} + \beta_{ij} \right)
+\end{equation}
+with $G_{ij}$ the decision variables and $G$ describing a valid greenhouse.
+This problem resumes to the Maximum Sum Rectangle problem (try to find how)
+which can be solved with a well-known dynamic programming algorithm based on Kadane's algorithm.

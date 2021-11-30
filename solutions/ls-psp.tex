@@ -36,8 +36,8 @@ To simplify the coming equations, let us define:
 Let $p',p''$ respectively denote the previous and next periods where an item is produced (i.e. the machine is not idle).
 Formally, we write:
 \begin{align}
-    p' = \max \left(\{ \pi \mid \pi \in [0,p-1] \text{ and } x_\pi \ne idle \} \right) \\
-    p'' = \min \left(\{ \pi \mid \pi \in [p+1,p_{max}] \text{ and } x_\pi \ne idle \} \right)
+    p' &= \max \left(\{ \pi \mid \pi \in [0,p-1] \text{ and } x_\pi \ne idle \} \right) \\
+    p'' &= \min \left(\{ \pi \mid \pi \in [p+1,p_{max}] \text{ and } x_\pi \ne idle \} \right)
 \end{align}
 The items produced at those periods, or the value $idle$ if there is no such period, are given by $k = x_{p'}$ and $l = x_{p''}$.
 
