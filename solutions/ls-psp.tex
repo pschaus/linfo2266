@@ -1,0 +1,55 @@
+\subsection{Pigment Sequencing Problem}
+
+In order to formulate the cost invariants, we use the variables $x_p \in I \cup \{ idle \}$
+which decide which item is produced at period $p \in [0,p_{max}]$ or if the machine is idle.
+
+
+If we were to change the value of $x_p$ from $i$ to $j$ and with $i,j \in I \cup \{ idle \}$
+and $d_i, d_j \ge p$ if $i,j \ne idle$ respectively,
+the cost of the solution would be increased by a $\Delta$ given by:
+\begin{equation}
+    \Delta = \Delta_{stocking} + \Delta_{changeover}
+\end{equation}
+where $\Delta_{stocking}$ and $\Delta_{changeover}$ respectively denote the variation of the total stocking and changeover costs.
+
+We first define the individual stocking cost:
+\begin{equation}
+    c_{stocking}(x_p = i) = \left\{ \begin{array}{lcl}
+        0 && \text{if }i=idle, \\
+        (d_i - p) h && \text{otherwise}.
+    \end{array} \right.
+\end{equation}
+which allows to formulate $\Delta_{stocking}$ easily:
+\begin{equation}
+    \Delta_{stocking} = c_{stocking}(x_p = j) - c_{stocking}(x_p = i)
+\end{equation}
+
+Similarly, we will express the individual changeover cost.
+To simplify the coming equations, let us define:
+\begin{equation}
+    q(i,j) = \left\{ \begin{array}{lcl}
+        0 && \text{if }i=idle\text{ or }j=idle, \\
+        q^{t_i,t_j} && \text{otherwise}.
+    \end{array} \right.
+\end{equation}
+
+Let $p',p''$ respectively denote the previous and next periods where an item is produced (i.e. the machine is not idle).
+Formally, we write:
+\begin{align}
+    p' = \max \left(\{ \pi \mid \pi \in [0,p-1] \text{ and } x_\pi \ne idle \} \right) \\
+    p'' = \min \left(\{ \pi \mid \pi \in [p+1,p_{max}] \text{ and } x_\pi \ne idle \} \right)
+\end{align}
+The items produced at those periods, or the value $idle$ if there is no such period, are given by $k = x_{p'}$ and $l = x_{p''}$.
+
+\begin{equation}
+    c_{changeover}(x_p = i) = \left\{ \begin{array}{lcl}
+        q(k,l) && \text{if }i=idle, \\
+        q(k,i) + q(i,l) && \text{otherwise}.
+    \end{array} \right.
+\end{equation}
+
+Finally, we can write:
+
+\begin{equation}
+    \Delta_{changeover} = c_{changeover}(x_p = j) - c_{changeover}(x_p = i)
+\end{equation}
