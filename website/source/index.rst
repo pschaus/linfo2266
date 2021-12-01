@@ -20,6 +20,7 @@ LINFO2266: Advanced Algorithms for Optimization
    colgen/index
    cp/index
    ls/index
+   flows/index
 
 .. Indices and tables
 .. ==================
