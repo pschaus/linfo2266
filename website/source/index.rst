@@ -21,6 +21,7 @@ LINFO2266: Advanced Algorithms for Optimization
    cp/index
    ls/index
    flows/index
+   biobj/index
 
 .. Indices and tables
 .. ==================

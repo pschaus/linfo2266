@@ -39,6 +39,26 @@ public class InputReader {
         }
     }
 
+    public double getDouble() throws RuntimeException {
+        if (!tokenizer.hasMoreTokens()) {
+            try {
+                String line;
+                do {
+                    line = in.readLine();
+                    if (line == null) {
+                        System.out.println("No more line to read");
+                        throw new RuntimeException("End of file");
+                    }
+                    tokenizer = new StringTokenizer(line);
+                } while (!tokenizer.hasMoreTokens());
+
+            } catch (IOException e) {
+                throw new RuntimeException(e.toString());
+            }
+        }
+        return Double.parseDouble(tokenizer.nextToken());
+    }
+
     public Integer getInt() throws RuntimeException {
         if (!tokenizer.hasMoreTokens()) {
             try {
