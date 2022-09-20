@@ -15,13 +15,20 @@ LINFO2266: Advanced Algorithms for Optimization
    intro/index
    dp/index
    bandb/index
-   lp/index
    lagrangian/index
-   colgen/index
-   cp/index
-   ls/index
+   lp/index
    flows/index
-   biobj/index
+   ls/index
+   cp/index
+   mdd/index
+   projects/index
+
+
+..  colgen/index
+..   cp/index
+..   ls/index
+..   flows/index
+..   biobj/index
 
 .. Indices and tables
 .. ==================
