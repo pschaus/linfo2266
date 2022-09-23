@@ -6,19 +6,14 @@
 Organization
 ************
 
-
-
 * `Introduction (slides) <https://www.icloud.com/keynote/0VEwH5kHJH0TaVkVFOTuQm89Q#00-intro>`_
-
 
 Pedagogy
 =======================================
 
-
 We will use flipped class rooms.
-Students are required to watch the video and participate to the Q&A and exercice sessions
+Students are required to watch the video and participate to the Q&A and exercise sessions
 plus do the programming assignments.
-
 
 This course will use *Java* language version Java8_.
 Recommanded IDE is IntelliJ_.
@@ -32,29 +27,25 @@ Recommanded IDE is IntelliJ_.
 Open-Source course
 =======================================
 
-This course is open-source with sources on `github <https://github.com/pschaus/linfo2266>`_.
+This course is open-source with sources on `Github <https://github.com/pschaus/linfo2266>`_.
 Pull requests are welcome for bugfix or improvement suggestions
 
-Licence on the content of this course is Creative Commons Attribution-ShareAlike 4.0 International License:
+License on the content of this course is Creative Commons Attribution-ShareAlike 4.0 International License:
 
 .. image:: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
     :alt: CC-BY-SA
 
-
-
 Evaluation
 =======================================
 
-To complete.
-
-
+Students will be evaluated through 6 projects during the semester.
+See :ref:`projects` for more details about the projects.
 
 Contact and communication
 =======================================
 
+Important communications will be made using `Moodle <https://moodle.uclouvain.be/course/view.php?id=1474>`_.
+`Teams <https://moodle.uclouvain.be/course/view.php?id=1474>`_ will also be used.
 
-Important communications using `moodle <https://moodle.uclouvain.be/course/view.php?id=1474>`_.
-`Teams <https://moodle.uclouvain.be/course/view.php?id=1474>`_. will also be used
-
-`Prof: Pierre Schaus <pierre.schaus@uclouvain.be>`_ and
-`TA:  <vianney.coppe@uclouvain.be>`_.
+Prof: `Pierre Schaus <pierre.schaus@uclouvain.be>`_ and
+TAs: `Vianney Coppé <vianney.coppe@uclouvain.be>`_, `Augustin Delecluse <augustin.delecluse@uclouvain.be>`_ and `Xavier Gillard <xavier.gillard@uclouvain.be>`_.
