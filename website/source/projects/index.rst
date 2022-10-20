@@ -77,6 +77,28 @@ The implementation work is composed of four steps:
 Project 3: Linear Programming and Maximum-Flows
 ===================================================
 
+
+In this project, you will model and solve a maximum flow problem and a maximum matching problem with a linear programming solver.
+It means that for these two problems must be encoded into the form of { max cx : Ax <= b, x >= 0 } that can be used
+by the simplex algorithm.
+
+Implementation
+---------------
+
+
+All the files related to this project are in the package ``linearprogramming``. You have to modify two classes
+
+
+#. ``FlowMatrices.java`` given a FlowNetwork instance, you must compute the coefficient A, b, c for solving the maximum flow problem with the simplex implementation.
+#. ``MatchingMatrices.java`` given a bipartite graph, you must compute the coefficient A, b, c for solving the maximum matching problem with the simplex implementation.
+
+Gradescope
+--------------
+
+On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project 3.
+Part of your assignment requires to report experimental results under the form of a graph.
+
+
 Project 4: Local Search
 ===================================================
 
