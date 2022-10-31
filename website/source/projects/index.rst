@@ -55,7 +55,7 @@ The second project is about Branch and Bound (BnB), Lagrangian Relaxation and th
 Your implementation work will be in the in the ``branchandbound`` package. As a preliminary, step, read first the class called ``BranchAndBoundKnapsack`` as this class is a good example of what you will do for the TSP, that is:
 
 1. Implement the state/node representation for the BnB search.
-2. Imlement a lower-bounding procedure to prune the BnB search.
+2. Implement a lower-bounding procedure to prune the BnB search.
 
 Gradescope
 --------------
@@ -101,6 +101,45 @@ Part of your assignment requires to report experimental results under the form o
 
 Project 4: Local Search
 ===================================================
+
+In this project, you will have to develop a local search solver for the Pigment Sequencing Problem (PSP).
+It is a Discrete Lot Sizing problem where several items must be produced by a single machine that is able to produce one item per time unit.
+Each item must be produced at the latest at its deadline.
+Additionally, there are stocking costs and sequence-dependent changeover costs.
+The objective is to find a production schedule that respects all deadlines and minimizes the sum of stocking and changeover costs.
+
+Formal definition
+------------------
+
+Let :math:`I` be a set of items to be produced and :math:`T` a set of types for those items.
+Each item :math:`i \in I` is associated to a deadline :math:`d_i` and a type :math:`t_i \in T`.
+We write :math:`p_i` the production period of item :math:`i \in I`.
+Each item must be produced at a different time period between 0 and :math:`p_{max}`.
+The stocking cost for each item produced is proportional to the number of time units between the deadline and the production period.
+Its value for one period of time depends on the item type :math:`S^{t_i}`.
+Moreover, a changeover cost :math:`C^{t_i,t_j}` is induced when switching the production of from item type :math:`t_i` to :math:`t_j`.
+
+Let :math:`x_p` denote the item produced at time period :math:`p`.
+If :math:`s_p` is the first item produced after period :math:`p` (the machine can be idle at some periods of time), then the PSP can be written as:
+
+$$\\begin{aligned}
+\\text{minimize } & \\sum_{p = 0}^{p_{max}-1} S^{t_{x_p}} * (d_{x_p} - p) + C^{t_{x_p},t_{s_p}} & \\\\
+\\text{such that } & p \\leq d_{x_p}, & 0 \\leq p < p_{max} \\\\
+& x_{p_1} \\neq x_{p_2}, & 0 \\leq p_1 < p_2 < p_{max}, x_{p_1} \\neq IDLE, x_{p_2} \\neq IDLE \\\\
+& x_p \\in I \\cup \\{IDLE\\}, & 0 \\leq p < p_{max}
+\\end{aligned} $$
+
+Implementation
+---------------
+
+All the files related to this project are in the package ``localsearch``.
+
+#. In your local search solver, a candidate solution is an array of variables that represent the production schedule :math:`x`. Implement the missing functions in ``ChangeoverCostInvariant.java`` and ``StockingCostInvariant.java`` to compute incrementally the cost of a production schedule after an update.
+#. Then, implement the functions in ``PSP.java`` to compute an initial feasible solution of the problem, and check if a swap move (with any number of variables concerned) is feasible.
+#. Finally, design your local search solver in ``LocalSearch.java`` that finds the best possible solution under a given time limit. Some features that can be implemented: swap moves with a dynamic number of periods concerned (similar to :math:`k`-opt), random restarts, intensification vs. diversification tradeoff, etc.
+
+.. warning::
+    As this task is quite computationally expensive, please test your code locally and only submit on Inginious when you have made substantial improvements to it.
 
 Project 5: Constraint Programming
 ===================================================
