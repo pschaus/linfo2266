@@ -129,6 +129,12 @@ $$\\begin{aligned}
 & x_p \\in I \\cup \\{IDLE\\}, & 0 \\leq p < p_{max}
 \\end{aligned} $$
 
+Gradescope
+---------------
+
+On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about local search.
+You will first solve a PSP instance by hand and then report and discuss experimental results.
+
 Implementation
 ---------------
 
