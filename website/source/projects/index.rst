@@ -239,11 +239,10 @@ problem in terms of dynamic programming along with a relaxation to merge nodes
 when a layer grows too large.
 
 
-August Project
-===================================================
+August Project: Efficient Traveling Salesman with Time- Windows TSPTW
+======================================================================
 
 
-Assignment: Efficient Traveling Salesman with Time- Windows TSPTW
 
 
 Your task is to develop TWO optimization approaches to tackle the TSPTW as efficiently as possible and compare them 
@@ -258,6 +257,7 @@ The two optimization approaches must be chosen among:
 
 
 The problem and instance files are available `here <https://lopez-ibanez.eu/tsptw-instances>`_  
+We consider the minimization of the total travel time objective.
 
 Your implementation should accept a path to an instance file and produce a permutation of cities (ranging from 1 to n, excluding the depot). This format ensures the solution's validity can be readily verified using the available checker.
 
