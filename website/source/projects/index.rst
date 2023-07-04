@@ -239,3 +239,50 @@ problem in terms of dynamic programming along with a relaxation to merge nodes
 when a layer grows too large.
 
 
+August Project
+===================================================
+
+
+Assignment: Efficient Traveling Salesman with Time- Windows TSPTW
+
+
+Your task is to develop TWO optimization approaches to tackle the TSPTW as efficiently as possible and compare them 
+
+The two optimization approaches must be chosen among:
+
+* Dynamic Programming (possibly using Decision Diagrams)
+* Local Search
+* Integer Linear Programming
+* Constraint Programming
+* Branch and Bound
+
+
+The problem and instance files are available `here <https://lopez-ibanez.eu/tsptw-instances>`_  
+
+Your implementation should accept a path to an instance file and produce a permutation of cities (ranging from 1 to n, excluding the depot). This format ensures the solution's validity can be readily verified using the available checker.
+
+The assignment must culminate in a detailed report (in PDF format) which includes the following sections:
+
+* Model and Justification: Explain each approach and the design choices. 
+* Experimental Results: Run your two approaches on instance files of various complexity/size and present your results. 
+* Conclusion and Recommendation: Provide an overall conclusion based on your experimental results. Your final recommendation should encompass the most effective strategies and method based on the obtained results.
+
+Submit your report via email to pierre.schaus@uclouvain.be and vianney.coppe@uclouvain.be by the deadline of August 15th. Ensure your source code is available in a private GitHub repository (link must be given in the report), and invite 'pschaus' and 'vcoppe' as collaborators.
+Maintain a regular commit pattern as you progress on the project. 
+We will not accept projects we deem suspicious, such as those with a single, large commit. 
+Frequent commits indicate a consistent work pattern and clear evolution of your project.
+
+Your code must be written in Java, and the only permissible external libraries are those provided within the six projects proposed throughout the year.
+
+In addition to the written work, you may be required to attend an interview regarding your report if deemed necessary by Pierre Schaus and Vianney Coppé
+
+All work must be your own. If you used any external sources, they must be clearly acknowledged in the report's bibliography.
+Do not share your source-code, make sure your repository is private.
+
+
+The project due in August will be evaluated on 20. The score will reflect the quality of your work, including the efficiency of your model, the clarity of your report, and your adherence to the project guidelines. The quality of your source code will be a critical aspect of your evaluation. 
+This includes readability, organization, effective use of algorithms and data structures, and the efficiency and correctness of your code.
+
+
+
+
