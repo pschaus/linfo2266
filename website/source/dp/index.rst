@@ -8,9 +8,9 @@ Dynamic Programming
 Theory
 =======================================
 
-Slides (keynote)
 
-* `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyr-4iiykzoz6nMb0gEI4tjR>`_
+.. * `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyr-4iiykzoz6nMb0gEI4tjR>`_
+
 * `Slides <../_static/slides/01-dynamic-programming.pdf>`_
 
 

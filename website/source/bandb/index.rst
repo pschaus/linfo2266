@@ -8,9 +8,11 @@ Branch and Bound
 Theory
 =======================================
 
+* `Slides <../_static/slides/02-branch-and-bound.pdf>`_
 
-* `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyoMPDl66rUcQlkMHSGWENib>`_
-* `Slides <https://www.icloud.com/keynote/0JO4LJSpQik_9to_JZAys14mQ#02-branch-and-bound>`_
+
+.. * `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyoMPDl66rUcQlkMHSGWENib>`_
+.. * `Slides <https://www.icloud.com/keynote/0JO4LJSpQik_9to_JZAys14mQ#02-branch-and-bound>`_
 
 
 Exercises
