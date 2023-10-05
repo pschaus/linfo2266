@@ -46,7 +46,7 @@ It consists of 2 parts:
     #. Run the tests for the TSP to see if your implementation is correct and fast enough.
     #. When you are done, do not forget to *commit* and *push* your changes before submitting your work on Inginious.
 
-..
+
    Project 2: Branch and Bound, Lagrangian Relaxation
    ===================================================
 
@@ -61,7 +61,7 @@ It consists of 2 parts:
    Gradescope
    --------------
 
-   On `Gradescope <https://www.gradescope.com/>`_, find the written assignment on BnB where you will learn about the TSP and model it on paper with this technique. Submit your answers when you are ready.
+   On `Gradescope <https://www.gradescope.com/>`_, find the written assignment on BnB where you will learn about the TSP and model it on paper with this technique. You can already answer to the Exercises 1 and 2, while Exercise 3 will need to wait until you complete your implementation.
 
    Implementation
    ---------------
@@ -75,6 +75,8 @@ It consists of 2 parts:
    #. Implement an enhanced bound calculation for the one-tree based on Lagrangian relaxation in the ``HeldKarpOneTree`` class. You can test your result by executing ``HeldKarpOneTreeFast``.
    #. Replace in your branch and bound for the TSP ``BranchAndBoundTSP``, the bound calculation by your new reinforced bound. You can test your result by executing ``BranchAndBoundTSPTest``.
 
+   Once your implementation is ready, don't forget to finish your written assignment, by writing your answer for Exercise 3!
+..
    Project 3: Linear Programming and Maximum-Flows
    ===================================================
 
