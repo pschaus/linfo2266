@@ -71,8 +71,8 @@ Then, go to your personal LINFO2266 Github repository, where you will specify th
 The implementation work is composed of four steps:
 
 #. Implement the simple one-tree based bound procedure in the ``SimpleOneTree`` class. You can test your result by executing ``SimpleOneTreeTestFast``.
-#. Implement the branch and bound for the TSP in the ``BranchAndBoundTSP`` class which will use the ``SimpleOneTree`` bound procedure you just implemented earlier. You can test your result by executing ``BranchAndBoundTSPTestFast``.
-#. Implement an enhanced bound calculation for the one-tree based on Lagrangian relaxation in the ``HeldKarpOneTree`` class. You can test your result by executing ``HeldKarpOneTreeFast``.
+#. Implement the branch and bound for the TSP in the ``BranchAndBoundTSP`` class which will use the ``SimpleOneTree`` bound procedure you just implemented earlier. You can check your result by executing the test ``testOneTree`` from ``BranchAndBoundTSPTestFast``.
+#. Implement an enhanced bound calculation for the one-tree based on Lagrangian relaxation in the ``HeldKarpOneTree`` class. You can test your result by executing ``HeldKarpOneTreeFast`` and the remaining tests from ``BranchAndBoundTSPTestFast``.
 #. Replace in your branch and bound for the TSP ``BranchAndBoundTSP``, the bound calculation by your new reinforced bound. You can test your result by executing ``BranchAndBoundTSPTest``.
 
 Once your implementation is ready, don't forget to finish your written assignment, by writing your answer for Exercise 3!
