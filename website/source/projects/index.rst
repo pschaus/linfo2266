@@ -46,35 +46,38 @@ It consists of 2 parts:
     #. Run the tests for the TSP to see if your implementation is correct and fast enough.
     #. When you are done, do not forget to *commit* and *push* your changes before submitting your work on Inginious.
 
+
+Project 2: Branch and Bound, Lagrangian Relaxation
+===================================================
+
+
+The second project is about Branch and Bound (BnB), Lagrangian Relaxation and the `Traveling Salesman Problem <https://en.wikipedia.org/wiki/Travelling_salesman_problem>`_ (TSP).
+
+Your implementation work will be in the in the ``branchandbound`` package. As a preliminary, step, read first the class called ``BranchAndBoundKnapsack`` as this class is a good example of what you will do for the TSP, that is:
+
+1. Implement the state/node representation for the BnB search.
+2. Implement a lower-bounding procedure to prune the BnB search.
+
+Gradescope
+--------------
+
+On `Gradescope <https://www.gradescope.com/>`_, find the written assignment on BnB where you will learn about the TSP and model it on paper with this technique. You can already answer to the Exercises 1 and 2, while Exercise 3 will need to wait until you complete your implementation.
+
+Implementation
+---------------
+
+Then, go to your personal LINFO2266 Github repository, where you will specify the classes to model and solve real TSP instances with branch and bound in the package ``branchandbound`` (don't forget to pull to get the latest update).
+
+The implementation work is composed of four steps:
+
+#. Implement the simple one-tree based bound procedure in the ``SimpleOneTree`` class. You can test your result by executing ``SimpleOneTreeTestFast``.
+#. Implement the branch and bound for the TSP in the ``BranchAndBoundTSP`` class which will use the ``SimpleOneTree`` bound procedure you just implemented earlier. You can check your result by executing the test ``testOneTree`` from ``BranchAndBoundTSPTestFast``.
+#. Implement an enhanced bound calculation for the one-tree based on Lagrangian relaxation in the ``HeldKarpOneTree`` class. You can test your result by executing ``HeldKarpOneTreeFast`` and the remaining tests from ``BranchAndBoundTSPTestFast``.
+#. Replace in your branch and bound for the TSP ``BranchAndBoundTSP``, the bound calculation by your new reinforced bound. You can test your result by executing ``BranchAndBoundTSPTest``.
+
+Once your implementation is ready, don't forget to finish your written assignment, by writing your answer for Exercise 3!
+
 ..
-   Project 2: Branch and Bound, Lagrangian Relaxation
-   ===================================================
-
-
-   The second project is about Branch and Bound (BnB), Lagrangian Relaxation and the `Traveling Salesman Problem <https://en.wikipedia.org/wiki/Travelling_salesman_problem>`_ (TSP).
-
-   Your implementation work will be in the in the ``branchandbound`` package. As a preliminary, step, read first the class called ``BranchAndBoundKnapsack`` as this class is a good example of what you will do for the TSP, that is:
-
-   1. Implement the state/node representation for the BnB search.
-   2. Implement a lower-bounding procedure to prune the BnB search.
-
-   Gradescope
-   --------------
-
-   On `Gradescope <https://www.gradescope.com/>`_, find the written assignment on BnB where you will learn about the TSP and model it on paper with this technique. Submit your answers when you are ready.
-
-   Implementation
-   ---------------
-
-   Then, go to your personal LINFO2266 Github repository, where you will specify the classes to model and solve real TSP instances with branch and bound in the package ``branchandbound`` (don't forget to pull to get the latest update).
-
-   The implementation work is composed of four steps:
-
-   #. Implement the simple one-tree based bound procedure in the ``SimpleOneTree`` class. You can test your result by executing ``SimpleOneTreeTestFast``.
-   #. Implement the branch and bound for the TSP in the ``BranchAndBoundTSP`` class which will use the ``SimpleOneTree`` bound procedure you just implemented earlier. You can test your result by executing ``BranchAndBoundTSPTestFast``.
-   #. Implement an enhanced bound calculation for the one-tree based on Lagrangian relaxation in the ``HeldKarpOneTree`` class. You can test your result by executing ``HeldKarpOneTreeFast``.
-   #. Replace in your branch and bound for the TSP ``BranchAndBoundTSP``, the bound calculation by your new reinforced bound. You can test your result by executing ``BranchAndBoundTSPTest``.
-
    Project 3: Linear Programming and Maximum-Flows
    ===================================================
 
