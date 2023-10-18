@@ -8,8 +8,9 @@ Linear Programming
 Theory
 =======================================
 
-* `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyoSSeucDx7FyUpMDjhc-Kyf>`_
-* `Slides <https://www.icloud.com/keynote/0Tu8miHL9lE61RhouiWizTIJQ#03-linear-programming>`_
+.. * `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyoSSeucDx7FyUpMDjhc-Kyf>`_
+
+* `Slides <../_static/slides/04-linear-programming.pdf>`_
 
 Exercises
 =======================================
