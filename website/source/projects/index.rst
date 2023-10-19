@@ -77,32 +77,32 @@ The implementation work is composed of four steps:
 
 Once your implementation is ready, don't forget to finish your written assignment, by writing your answer for Exercise 3!
 
+Project 3: Linear Programming and Maximum-Flows
+===================================================
+
+
+In this project, you will model and solve a maximum flow problem and a maximum matching problem with a linear programming solver.
+It means that for these two problems must be encoded into the form of { max cx : Ax <= b, x >= 0 } that can be used
+by the simplex algorithm.
+
+Implementation
+---------------
+
+All the files related to this project are in the package ``linearprogramming``. You have to modify three classes:
+
+#. ``FlowMatrices.java`` : given a FlowNetwork instance, you must compute the coefficient A, b, c for solving the maximum flow problem with the simplex implementation.
+#. ``MatchingMatrices.java`` : given a bipartite graph, you must compute the coefficient A, b, c for solving the maximum matching problem with the simplex implementation.
+#. ``BigMSimplex.java`` initializes the simplex method, even when negative values for b are given. You need to fill in the simplex tableau to ensure that it finds a correct solution. Here are some inspirations for implementing it. In the class ``LinearProgramming.java`` lies an implementation of the simplex algorithm, without the initialization. In ``TwoPhaseSimplex.java``, the initialization is done by transforming the objective function, and first solving the problem { max -sum(x_a) : Ax + x_a <= b, x_a >= 0, x >= 0 } before solving the original problem. In ``BigMSimplex.java``, your goal is to solve the problem by introducing a constant M >= 0, and solving the problem { max cx - M x_a : Ax + x_a <= b, x_a >= 0, x >= 0 }. Note that there is no need to then switch back to the original objective function: if M is correctly chosen, the optimal value for this problem should be the same as the one found by ``LinearProgramming.java``, without the need to switch to a second phase. You can test your code by running the example in ``DietProblem.java``, that solves the `Diet problem <https://en.wikipedia.org/wiki/Stigler_diet>`_ .
+
+Once your code is ready, you can submit it onto inginious and work on the report.
+
+Gradescope
+--------------
+
+On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project 3.
+Part of your assignment requires to report experimental results under the form of a graph.
+
 ..
-   Project 3: Linear Programming and Maximum-Flows
-   ===================================================
-
-
-   In this project, you will model and solve a maximum flow problem and a maximum matching problem with a linear programming solver.
-   It means that for these two problems must be encoded into the form of { max cx : Ax <= b, x >= 0 } that can be used
-   by the simplex algorithm.
-
-   Implementation
-   ---------------
-
-
-   All the files related to this project are in the package ``linearprogramming``. You have to modify two classes
-
-
-   #. ``FlowMatrices.java`` given a FlowNetwork instance, you must compute the coefficient A, b, c for solving the maximum flow problem with the simplex implementation.
-   #. ``MatchingMatrices.java`` given a bipartite graph, you must compute the coefficient A, b, c for solving the maximum matching problem with the simplex implementation.
-
-   Gradescope
-   --------------
-
-   On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project 3.
-   Part of your assignment requires to report experimental results under the form of a graph.
-
-
    Project 4: Local Search
    ===================================================
 
