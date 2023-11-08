@@ -9,9 +9,10 @@ Theory
 =======================================
 
 
-* Part1: LS CBLS solver and Sudoku `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyrV3kOH5L2u7ZEjmLGWkZ_X>`_
-* Part2: LS TSP, Routing, Scheduling, VLNS `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyr_lObjPgqYdh51PBB3GmX0>`_
-* `Slides  <https://www.icloud.com/keynote/0X0mx27SJ79kODLuNqocALfvQ#06-local-search>`_
+* `Slides <../_static/slides/06-local-search.pdf>`_
+
+
+.. * `Slides  <https://www.icloud.com/keynote/0X0mx27SJ79kODLuNqocALfvQ#06-local-search>`_
 
 
 
