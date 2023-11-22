@@ -167,7 +167,7 @@ public class SudokuVisu extends Application {
                 0, 5, 1, 6, 8, 4, 7, 0, 0,
                 0, 4, 0, 7, 0, 0, 0, 0, 9};
 
-        int[] problem = instance3;
+        int[] problem = instance1;
 
         Sudoku sudoku = new Sudoku(problem);
         Paint [] colors = new Paint[] {Color.LIGHTGREEN,Color.YELLOW,Color.ORANGE,Color.RED,Color.PURPLE,Color.BLACK,Color.BLACK,Color.BLACK,Color.BLACK };

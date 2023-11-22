@@ -205,12 +205,12 @@ public class TSP {
                 improved = iteration();
                 notifyAllObservers(iter);
                 iter += 1;
-                /*
+                
                 try {
                     Thread.sleep(100);
                 } catch (Exception e){
 
-                }*/
+                }
             } while (improved);
             long t1 = System.currentTimeMillis();
             System.out.println("#iter"+iter);

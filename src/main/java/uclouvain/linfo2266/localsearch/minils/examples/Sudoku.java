@@ -207,7 +207,7 @@ public class Sudoku {
         int iter = 1;
         int tabu = 20;
         while (constraintSystem.violation().value() > 0) {
-            if (iter > 1000) break;
+            if (iter > 100000) break;
             iterationTabu(iter++,tabu);
             iterationGreedy(iter++);
             System.out.println(violation.value());
