@@ -200,50 +200,53 @@ All the files related to this project are in the package ``localsearch``.
     #. As this task is quite computationally expensive, please test your code locally and only submit on Inginious when you have made substantial improvements to it.
     #. If you decide to use randomness in your code, be sure to use seeds to ensure that the results found on your machine are the same as the ones on Inginious.
 
+
+Project 5: Constraint Programming
+===================================================
+
+In the 5th project, you will discover Constraint Programming by solving 2 exercises: the Magic Square Problem and the Killer Sudoku Problem.
+Those problems are rather hard to solve, and you will use a Constraint Programming solver to tackle them.
+But first you have to fill in certain functions to ensure that your solver is ready to be used.
+
+Solver implementation
+---------------
+
+Here are the required steps to have your required constraints working:
+
+#. Implement the ``removeAbove`` and ``removeBelow`` methods from the ``Domain`` class. Those methods will remove all values within a domain that are greater / lower than a given threshold.
+#. Implement the propagator from the ``Sum`` constraint. This constraint is applied on an array of ``Variable`` :math:`x` and on one expected sum, :math:`y`. It ensures that :math:`\sum x = y`. Your algorithm must be bound-consistent: you only need to update the maximum and minimum values of the variables present within the constraint.
+#. Implement the propagator form the ``LessOrEqual`` constraint. This constraint is applied on two ``Variable``: :math:`x` and :math:`y`, and ensures that :math:`\sum x \leq y`. Your algorithm must be bound-consistent: you only need to update the maximum and minimum values of the variables present within the constraint.
+
+For each of those steps, you will find corresponding unit tests to ensure that your solver is working as expected before moving on to the modeling.
+
+Modeling the problems
+---------------
+
+There are two problems to model in this project:
+
+#. The Magic Square Problem. Given an square of :math:`n\times n` cells, you need to find an assignment of values to each cell such that
+
+  #. Every value appears once and only once;
+  #. The sum of every row, column and of both diagonal within the square are the same.
+
+#. The Killer Sudoku Problem. In this variation of the Sudoku, the cells belong to a group. The sum of values within the cell belonging to a group must equal to a given input value. The whole set of constraints in this problem is thus
+
+  #. Each row, column, and subsquare contains each number exactly once;
+  #. The sum of all numbers in a group must match the expected sum of the group.
+
+The implementation needs to be done within the ``MagicSquareSolver`` and ``KillerSudokuSolver`` files, by completing the TODO's.
+In each of those model, you need to give all solutions according to the given input instance by relying on your ``TinyCSP`` solver.
+You can also refer to the already implemented ``NQueens`` model if you wish to see how variables should be created, how to add constraints and how to solve a problem.
+
+Gradescope
+---------------
+
+On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about constraint programming.
+You will first give some details about the modeling of a Magic Square Problem.
+Afterwards, you will examine how to derive additional solutions by examining the symmetries within the problem.
+Finally, a last step will ask you to run some experiments using your solver.
+
 ..
-   Project 5: Constraint Programming
-   ===================================================
-
-   In the 5th project, you will discover Constraint Programming by solving 2 exercises: the Magic Square Problem and the Killer Sudoku Problem.
-   Those problems are rather hard to solve, and you will use a Constraint Programming solver to tackle them.
-   But first you have to fill in certain functions to ensure that your solver is ready to be used.
-
-   Solver implementation
-   ---------------
-
-   Here are the required steps to have your required constraints working:
-
-   #. Implement the ``removeAbove`` and ``removeBelow`` methods from the ``Domain`` class. Those methods will remove all values within a domain that are greater / lower than a given threshold.
-   #. Implement the propagator from the ``Sum`` constraint. This constraint is applied on an array of ``Variable`` :math:`x` and on one expected sum, :math:`y`. It ensures that :math:`\sum x = y`. Your algorithm must be bound-consistent: you only need to update the maximum and minimum values of the variables present within the constraint.
-
-   For each of those steps, you will find unit tests to ensure that your solver is working as expected before moving on to the modeling.
-
-   Modeling the problems
-   ---------------
-
-   There are two problems to model in this project:
-
-   #. The Magic Square Problem. Given an square of :math:`n\times n` cells, you need to find an assignment of values to each cell such that
-
-      #. Every value appears once and only once;
-      #. The sum of every row, column and of both diagonal within the square are the same.
-
-   #. The Killer Sudoku Problem. In this variation of the Sudoku, the cells belong to a cage. The sum of values within the cell belonging to a cage must equal to a given input value. The whole set of constraints in this problem is thus
-
-      #. Each row, column, and subsquare contains each number exactly once;
-      #. The sum of all numbers in a cage must match the expected sum of the cage.
-
-   The implementation needs to be done within the ``MagicSquareSolver`` and ``KillerSudokuSolver`` files, by completing the TODO's.
-   In each of those model, you need to give all solutions according to the given input instance by relying on your ``TinyCSP`` solver.
-   You can also refer to the already implemented ``NQueens`` model if you wish to see how variables should be created, how to add constraints and how to solve a problem.
-
-   Gradescope
-   ---------------
-
-   On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about constraint programming.
-   You will first give some details about the modeling of a Magic Square Problem.
-   Afterwards, you will examine how to derive additional solutions by examining the symmetries within the problem.
-
    Project 6: MDD
    ===================================================
 
