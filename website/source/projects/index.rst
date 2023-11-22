@@ -144,98 +144,109 @@ Gradescope
 On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project 3.
 Part of your assignment requires to report experimental results under the form of a graph.
 
+Project 4: Local Search
+===================================================
+
+In this project, you will have to develop a local search solver for the Pigment Sequencing Problem (PSP).
+It is a Discrete Lot Sizing problem where several items must be produced by a single machine that is able to produce one item per time unit.
+Each item must be produced at the latest at its deadline.
+Additionally, there are stocking costs and sequence-dependent changeover costs.
+The objective is to find a production schedule that respects all deadlines and minimizes the sum of stocking and changeover costs.
+
+Formal definition
+------------------
+
+Let :math:`I` be a set of items to be produced and :math:`T` a set of types for those items.
+Each item :math:`i \in I` is associated to a deadline :math:`d_i` and a type :math:`t_i \in T`.
+We write :math:`p_i` the production period of item :math:`i \in I`.
+Each item must be produced at a different time period between 0 and :math:`p_{max}`.
+The stocking cost for each item produced is proportional to the number of time units between the deadline and the production period.
+Its value for one period of time depends on the item type :math:`S^{t_i}`.
+Moreover, a changeover cost :math:`C^{t_i,t_j}` is induced when switching the production of from item type :math:`t_i` to :math:`t_j`.
+
+Let :math:`x_p` denote the item produced at time period :math:`p`.
+If :math:`s_p` is the first item produced after period :math:`p` (the machine can be idle at some periods of time), then the PSP can be written as:
+
+$$\\begin{aligned}
+\\text{minimize } & \\sum_{p = 0}^{p_{max}-1} S^{t_{x_p}} * (d_{x_p} - p) + C^{t_{x_p},t_{s_p}} & \\\\
+\\text{such that } & p \\leq d_{x_p}, & 0 \\leq p < p_{max} \\\\
+& x_{p_1} \\neq x_{p_2}, & 0 \\leq p_1 < p_2 < p_{max}, x_{p_1} \\neq IDLE, x_{p_2} \\neq IDLE \\\\
+& x_p \\in I \\cup \\{IDLE\\}, & 0 \\leq p < p_{max}
+\\end{aligned} $$
+
+Gradescope
+---------------
+
+On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about local search.
+You will first solve a PSP instance by hand and then report and discuss experimental results.
+
+Implementation
+---------------
+
+All the files related to this project are in the package ``localsearch``.
+
+#. In your local search solver, a candidate solution is an array of variables that represent the production schedule :math:`x`. Implement the missing functions in ``ChangeoverCostInvariant.java`` and ``StockingCostInvariant.java`` to compute incrementally the cost of a production schedule after an update.
+#. Then, implement the functions in ``PSP.java`` to compute an initial feasible solution of the problem, and check if a swap move (with any number of variables concerned) is feasible.
+#. Finally, design your local search solver in ``LocalSearch.java`` that finds the best possible solution under a given time limit, by calling the method :code:`solve`. Some features that can be implemented: swap moves with a dynamic number of periods concerned (similar to :math:`k`-opt), random restarts, intensification vs. diversification tradeoff, etc. Some mandatories functions to implement are:
+
+    #. :code:`resetSearch` that restarts the search, keeping some elements from the best candidate registered
+    #. :code:`getNBestSwaps`, an utility method returning the best :code:`n` swaps that can be operated over the current candidate
+    #. :code:`selectSwap`, an utility method selecting a swap to perform within a list of swaps.
+    #. :code:`maybeSaveCurrentCandidate`, an utility method replacing the current candidate by the best candidate if its value is better.
+
+    These functions will be useful to design your local search solver. How to combine them exactly, when to call them, and what parameters to give them is left for you to implement. You can find related tests for those functions in the :code:`LocalSearchTestFast` class. Note that these tests will need at least (part of) your :code:`solve` method to be implemented.
+
+.. warning::
+    #. As this task is quite computationally expensive, please test your code locally and only submit on Inginious when you have made substantial improvements to it.
+    #. If you decide to use randomness in your code, be sure to use seeds to ensure that the results found on your machine are the same as the ones on Inginious.
+
+
+Project 5: Constraint Programming
+===================================================
+
+In the 5th project, you will discover Constraint Programming by solving 2 exercises: the Magic Square Problem and the Killer Sudoku Problem.
+Those problems are rather hard to solve, and you will use a Constraint Programming solver to tackle them.
+But first you have to fill in certain functions to ensure that your solver is ready to be used.
+
+Solver implementation
+---------------
+
+Here are the required steps to have your required constraints working:
+
+#. Implement the ``removeAbove`` and ``removeBelow`` methods from the ``Domain`` class. Those methods will remove all values within a domain that are greater / lower than a given threshold.
+#. Implement the propagator from the ``Sum`` constraint. This constraint is applied on an array of ``Variable`` :math:`x` and on one expected sum, :math:`y`. It ensures that :math:`\sum x = y`. Your algorithm must be bound-consistent: you only need to update the maximum and minimum values of the variables present within the constraint.
+#. Implement the propagator from the ``LessOrEqual`` constraint. This constraint is applied on two ``Variable``: :math:`x` and :math:`y`, and ensures that :math:`x \leq y`. Your algorithm must be bound-consistent: you only need to update the maximum and minimum values of the variables present within the constraint.
+
+For each of those steps, you will find corresponding unit tests to ensure that your solver is working as expected before moving on to the modeling.
+
+Modeling the problems
+---------------
+
+There are two problems to model in this project:
+
+#. The Magic Square Problem. Given an square of :math:`n\times n` cells, you need to find an assignment of values to each cell such that
+
+  #. Every value appears once and only once;
+  #. The sum of every row, column and of both diagonal within the square are the same.
+
+#. The Killer Sudoku Problem. In this variation of the Sudoku, the cells belong to a group. The sum of values within the cell belonging to a group must equal to a given input value. The whole set of constraints in this problem is thus
+
+  #. Each row, column, and subsquare contains each number exactly once;
+  #. The sum of all numbers in a group must match the expected sum of the group.
+
+The implementation needs to be done within the ``MagicSquareSolver`` and ``KillerSudokuSolver`` files, by completing the TODO's.
+In each of those model, you need to give all solutions according to the given input instance by relying on your ``TinyCSP`` solver.
+You can also refer to the already implemented ``NQueens`` model if you wish to see how variables should be created, how to add constraints and how to solve a problem.
+
+Gradescope
+---------------
+
+On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about constraint programming.
+You will first give some details about the modeling of a Magic Square Problem.
+Afterwards, you will examine how to derive additional solutions by examining the symmetries within the problem.
+Finally, a last step will ask you to run some experiments using your solver.
+
 ..
-   Project 4: Local Search
-   ===================================================
-
-   In this project, you will have to develop a local search solver for the Pigment Sequencing Problem (PSP).
-   It is a Discrete Lot Sizing problem where several items must be produced by a single machine that is able to produce one item per time unit.
-   Each item must be produced at the latest at its deadline.
-   Additionally, there are stocking costs and sequence-dependent changeover costs.
-   The objective is to find a production schedule that respects all deadlines and minimizes the sum of stocking and changeover costs.
-
-   Formal definition
-   ------------------
-
-   Let :math:`I` be a set of items to be produced and :math:`T` a set of types for those items.
-   Each item :math:`i \in I` is associated to a deadline :math:`d_i` and a type :math:`t_i \in T`.
-   We write :math:`p_i` the production period of item :math:`i \in I`.
-   Each item must be produced at a different time period between 0 and :math:`p_{max}`.
-   The stocking cost for each item produced is proportional to the number of time units between the deadline and the production period.
-   Its value for one period of time depends on the item type :math:`S^{t_i}`.
-   Moreover, a changeover cost :math:`C^{t_i,t_j}` is induced when switching the production of from item type :math:`t_i` to :math:`t_j`.
-
-   Let :math:`x_p` denote the item produced at time period :math:`p`.
-   If :math:`s_p` is the first item produced after period :math:`p` (the machine can be idle at some periods of time), then the PSP can be written as:
-
-   $$\\begin{aligned}
-   \\text{minimize } & \\sum_{p = 0}^{p_{max}-1} S^{t_{x_p}} * (d_{x_p} - p) + C^{t_{x_p},t_{s_p}} & \\\\
-   \\text{such that } & p \\leq d_{x_p}, & 0 \\leq p < p_{max} \\\\
-   & x_{p_1} \\neq x_{p_2}, & 0 \\leq p_1 < p_2 < p_{max}, x_{p_1} \\neq IDLE, x_{p_2} \\neq IDLE \\\\
-   & x_p \\in I \\cup \\{IDLE\\}, & 0 \\leq p < p_{max}
-   \\end{aligned} $$
-
-   Gradescope
-   ---------------
-
-   On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about local search.
-   You will first solve a PSP instance by hand and then report and discuss experimental results.
-
-   Implementation
-   ---------------
-
-   All the files related to this project are in the package ``localsearch``.
-
-   #. In your local search solver, a candidate solution is an array of variables that represent the production schedule :math:`x`. Implement the missing functions in ``ChangeoverCostInvariant.java`` and ``StockingCostInvariant.java`` to compute incrementally the cost of a production schedule after an update.
-   #. Then, implement the functions in ``PSP.java`` to compute an initial feasible solution of the problem, and check if a swap move (with any number of variables concerned) is feasible.
-   #. Finally, design your local search solver in ``LocalSearch.java`` that finds the best possible solution under a given time limit. Some features that can be implemented: swap moves with a dynamic number of periods concerned (similar to :math:`k`-opt), random restarts, intensification vs. diversification tradeoff, etc.
-
-   .. warning::
-       As this task is quite computationally expensive, please test your code locally and only submit on Inginious when you have made substantial improvements to it.
-
-   Project 5: Constraint Programming
-   ===================================================
-
-   In the 5th project, you will discover Constraint Programming by solving 2 exercises: the Magic Square Problem and the Killer Sudoku Problem.
-   Those problems are rather hard to solve, and you will use a Constraint Programming solver to tackle them.
-   But first you have to fill in certain functions to ensure that your solver is ready to be used.
-
-   Solver implementation
-   ---------------
-
-   Here are the required steps to have your required constraints working:
-
-   #. Implement the ``removeAbove`` and ``removeBelow`` methods from the ``Domain`` class. Those methods will remove all values within a domain that are greater / lower than a given threshold.
-   #. Implement the propagator from the ``Sum`` constraint. This constraint is applied on an array of ``Variable`` :math:`x` and on one expected sum, :math:`y`. It ensures that :math:`\sum x = y`. Your algorithm must be bound-consistent: you only need to update the maximum and minimum values of the variables present within the constraint.
-
-   For each of those steps, you will find unit tests to ensure that your solver is working as expected before moving on to the modeling.
-
-   Modeling the problems
-   ---------------
-
-   There are two problems to model in this project:
-
-   #. The Magic Square Problem. Given an square of :math:`n\times n` cells, you need to find an assignment of values to each cell such that
-
-      #. Every value appears once and only once;
-      #. The sum of every row, column and of both diagonal within the square are the same.
-
-   #. The Killer Sudoku Problem. In this variation of the Sudoku, the cells belong to a cage. The sum of values within the cell belonging to a cage must equal to a given input value. The whole set of constraints in this problem is thus
-
-      #. Each row, column, and subsquare contains each number exactly once;
-      #. The sum of all numbers in a cage must match the expected sum of the cage.
-
-   The implementation needs to be done within the ``MagicSquareSolver`` and ``KillerSudokuSolver`` files, by completing the TODO's.
-   In each of those model, you need to give all solutions according to the given input instance by relying on your ``TinyCSP`` solver.
-   You can also refer to the already implemented ``NQueens`` model if you wish to see how variables should be created, how to add constraints and how to solve a problem.
-
-   Gradescope
-   ---------------
-
-   On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about constraint programming.
-   You will first give some details about the modeling of a Magic Square Problem.
-   Afterwards, you will examine how to derive additional solutions by examining the symmetries within the problem.
-
    Project 6: MDD
    ===================================================
 
