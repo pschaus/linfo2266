@@ -215,7 +215,7 @@ Here are the required steps to have your required constraints working:
 
 #. Implement the ``removeAbove`` and ``removeBelow`` methods from the ``Domain`` class. Those methods will remove all values within a domain that are greater / lower than a given threshold.
 #. Implement the propagator from the ``Sum`` constraint. This constraint is applied on an array of ``Variable`` :math:`x` and on one expected sum, :math:`y`. It ensures that :math:`\sum x = y`. Your algorithm must be bound-consistent: you only need to update the maximum and minimum values of the variables present within the constraint.
-#. Implement the propagator form the ``LessOrEqual`` constraint. This constraint is applied on two ``Variable``: :math:`x` and :math:`y`, and ensures that :math:`\sum x \leq y`. Your algorithm must be bound-consistent: you only need to update the maximum and minimum values of the variables present within the constraint.
+#. Implement the propagator from the ``LessOrEqual`` constraint. This constraint is applied on two ``Variable``: :math:`x` and :math:`y`, and ensures that :math:`x \leq y`. Your algorithm must be bound-consistent: you only need to update the maximum and minimum values of the variables present within the constraint.
 
 For each of those steps, you will find corresponding unit tests to ensure that your solver is working as expected before moving on to the modeling.
 
