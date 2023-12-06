@@ -7,4 +7,4 @@ MDD
 
 Theory
 =======================================
-* `Slides <https://www.dropbox.com/s/kcfhla27meuga73/11-mdd.pdf?dl=0>`_
+* `Slides <../_static/slides/08-mdd.pdf>`_
