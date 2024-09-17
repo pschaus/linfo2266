@@ -147,58 +147,70 @@ Part of your assignment requires to report experimental results under the form o
 Project 4: Local Search
 ===================================================
 
-In this project, you will have to develop a local search solver for the Pigment Sequencing Problem (PSP).
-It is a Discrete Lot Sizing problem where several items must be produced by a single machine that is able to produce one item per time unit.
-Each item must be produced at the latest at its deadline.
-Additionally, there are stocking costs and sequence-dependent changeover costs.
-The objective is to find a production schedule that respects all deadlines and minimizes the sum of stocking and changeover costs.
+Work in progress
 
-Formal definition
-------------------
+..
+    In this project, you will have to develop a local search solver for the Pigment Sequencing Problem (PSP).
+    It is a Discrete Lot Sizing problem where several items must be produced by a single machine that is able to produce one item per time unit.
+    Each item must be produced at the latest at its deadline.
+    Additionally, there are stocking costs and sequence-dependent changeover costs.
+    The objective is to find a production schedule that respects all deadlines and minimizes the sum of stocking and changeover costs.
 
-Let :math:`I` be a set of items to be produced and :math:`T` a set of types for those items.
-Each item :math:`i \in I` is associated to a deadline :math:`d_i` and a type :math:`t_i \in T`.
-We write :math:`p_i` the production period of item :math:`i \in I`.
-Each item must be produced at a different time period between 0 and :math:`p_{max}`.
-The stocking cost for each item produced is proportional to the number of time units between the deadline and the production period.
-Its value for one period of time depends on the item type :math:`S^{t_i}`.
-Moreover, a changeover cost :math:`C^{t_i,t_j}` is induced when switching the production of from item type :math:`t_i` to :math:`t_j`.
+    Formal definition
+    ------------------
 
-Let :math:`x_p` denote the item produced at time period :math:`p`.
-If :math:`s_p` is the first item produced after period :math:`p` (the machine can be idle at some periods of time), then the PSP can be written as:
 
-$$\\begin{aligned}
-\\text{minimize } & \\sum_{p = 0}^{p_{max}-1} S^{t_{x_p}} * (d_{x_p} - p) + C^{t_{x_p},t_{s_p}} & \\\\
-\\text{such that } & p \\leq d_{x_p}, & 0 \\leq p < p_{max} \\\\
-& x_{p_1} \\neq x_{p_2}, & 0 \\leq p_1 < p_2 < p_{max}, x_{p_1} \\neq IDLE, x_{p_2} \\neq IDLE \\\\
-& x_p \\in I \\cup \\{IDLE\\}, & 0 \\leq p < p_{max}
-\\end{aligned} $$
+    Let :math:`I` be a set of items to be produced and :math:`T` a set of types for those items.
+    Each item :math:`i \in I` is associated to a deadline :math:`d_i` and a type :math:`t_i \in T`.
+    We write :math:`p_i` the production period of item :math:`i \in I`.
+    Each item must be produced at a different time period between 0 and :math:`p_{max}`.
+    The stocking cost for each item produced is proportional to the number of time units between the deadline and the production period.
+    Its value for one period of time depends on the item type :math:`S^{t_i}`.
+    Moreover, a changeover cost :math:`C^{t_i,t_j}` is induced when switching the production of from item type :math:`t_i` to :math:`t_j`.
 
-Gradescope
----------------
 
-On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about local search.
-You will first solve a PSP instance by hand and then report and discuss experimental results.
+    Let :math:`x_p` denote the item produced at time period :math:`p`.
+    If :math:`s_p` is the first item produced after period :math:`p` (the machine can be idle at some periods of time), then the PSP can be written as:
 
-Implementation
----------------
 
-All the files related to this project are in the package ``localsearch``.
+    $$\\begin{aligned}
+    \\text{minimize } & \\sum_{p = 0}^{p_{max}-1} S^{t_{x_p}} * (d_{x_p} - p) + C^{t_{x_p},t_{s_p}} & \\\\
+    \\text{such that } & p \\leq d_{x_p}, & 0 \\leq p < p_{max} \\\\
+    & x_{p_1} \\neq x_{p_2}, & 0 \\leq p_1 < p_2 < p_{max}, x_{p_1} \\neq IDLE, x_{p_2} \\neq IDLE \\\\
+    & x_p \\in I \\cup \\{IDLE\\}, & 0 \\leq p < p_{max}
+    \\end{aligned} $$
 
-#. In your local search solver, a candidate solution is an array of variables that represent the production schedule :math:`x`. Implement the missing functions in ``ChangeoverCostInvariant.java`` and ``StockingCostInvariant.java`` to compute incrementally the cost of a production schedule after an update.
-#. Then, implement the functions in ``PSP.java`` to compute an initial feasible solution of the problem, and check if a swap move (with any number of variables concerned) is feasible.
-#. Finally, design your local search solver in ``LocalSearch.java`` that finds the best possible solution under a given time limit, by calling the method :code:`solve`. Some features that can be implemented: swap moves with a dynamic number of periods concerned (similar to :math:`k`-opt), random restarts, intensification vs. diversification tradeoff, etc. Some mandatories functions to implement are:
 
-    #. :code:`resetSearch` that restarts the search, keeping some elements from the best candidate registered
-    #. :code:`getNBestSwaps`, an utility method returning the best :code:`n` swaps that can be operated over the current candidate
-    #. :code:`selectSwap`, an utility method selecting a swap to perform within a list of swaps.
-    #. :code:`maybeSaveCurrentCandidate`, an utility method replacing the current candidate by the best candidate if its value is better.
+    Gradescope
+    ---------------
+
+
+    On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about local search.
+    You will first solve a PSP instance by hand and then report and discuss experimental results.
+
+
+    Implementation
+    ---------------
+
+
+    All the files related to this project are in the package ``localsearch``.
+
+
+    #. In your local search solver, a candidate solution is an array of variables that represent the production schedule :math:`x`. Implement the missing functions in ``ChangeoverCostInvariant.java`` and ``StockingCostInvariant.java`` to compute incrementally the cost of a production schedule after an update.
+    #. Then, implement the functions in ``PSP.java`` to compute an initial feasible solution of the problem, and check if a swap move (with any number of variables concerned) is feasible.
+    #. Finally, design your local search solver in ``LocalSearch.java`` that finds the best possible solution under a given time limit, by calling the method :code:`solve`. Some features that can be implemented: swap moves with a dynamic number of periods concerned (similar to :math:`k`-opt), random restarts, intensification vs. diversification tradeoff, etc. Some mandatories functions to implement are:
+
+        #. :code:`resetSearch` that restarts the search, keeping some elements from the best candidate registered
+        #. :code:`getNBestSwaps`, an utility method returning the best :code:`n` swaps that can be operated over the current candidate
+        #. :code:`selectSwap`, an utility method selecting a swap to perform within a list of swaps.
+        #. :code:`maybeSaveCurrentCandidate`, an utility method replacing the current candidate by the best candidate if its value is better.
 
     These functions will be useful to design your local search solver. How to combine them exactly, when to call them, and what parameters to give them is left for you to implement. You can find related tests for those functions in the :code:`LocalSearchTestFast` class. Note that these tests will need at least (part of) your :code:`solve` method to be implemented.
 
-.. warning::
-    #. As this task is quite computationally expensive, please test your code locally and only submit on Inginious when you have made substantial improvements to it.
-    #. If you decide to use randomness in your code, be sure to use seeds to ensure that the results found on your machine are the same as the ones on Inginious.
+
+    .. warning::
+        #. As this task is quite computationally expensive, please test your code locally and only submit on Inginious when you have made substantial improvements to it.
+        #. If you decide to use randomness in your code, be sure to use seeds to ensure that the results found on your machine are the same as the ones on Inginious.
 
 
 Project 5: Constraint Programming
@@ -209,7 +221,7 @@ Those problems are rather hard to solve, and you will use a Constraint Programmi
 But first you have to fill in certain functions to ensure that your solver is ready to be used.
 
 Solver implementation
----------------
+---------------------------
 
 Here are the required steps to have your required constraints working:
 
@@ -220,7 +232,7 @@ Here are the required steps to have your required constraints working:
 For each of those steps, you will find corresponding unit tests to ensure that your solver is working as expected before moving on to the modeling.
 
 Modeling the problems
----------------
+---------------------------
 
 There are two problems to model in this project:
 
@@ -256,7 +268,7 @@ a sequential version for the solver interface, and a model + relaxation to solve
 the maximum decarbonation problem.
 
 Solver implementation
----------
+---------------------------
 
 To get started with your implementation of the `SequentualSolver` we advise you
 to go read the pseudo-code given in the slides and then to give a look at the
@@ -266,7 +278,7 @@ Once you are done with the implementation of your sequential solver, you will be
 able to validate it against the tests in `TestSequentialSolver`.
 
 Modeling the Max Decarbonation Problem
---------
+-----------------------------------------
 
 After that, you are asked to model the maximum decarbonation problem in terms
 of dynamic programming. To that end, you will want to start by defining the

@@ -14,6 +14,24 @@ Theory
 * `Slides <../_static/slides/01-dynamic-programming.pdf>`_
 
 
+Project: Dynamic Programming
+===================================================
+
+If not done yet, follow the instructions given above to enroll to the Gradescope and Inginious courses, as well as retrieving the source code of the projects.
+
+The first project is about Dynamic Programming (DP) and the `Traveling Salesman Problem <https://en.wikipedia.org/wiki/Travelling_salesman_problem>`_ (TSP).
+It consists of 2 parts:
+
+* On `Gradescope <https://www.gradescope.com/>`_, find the assignment on DP where you will learn about the TSP and model it on paper with this technique. Submit your answers when you are ready.
+* Then, go to your personal LINFO2266 Github repository, where you will specify your model and solve real TSP instances.
+    #. In the ``dynamicprogramming`` package, you will find a file called ``DynamicProgramming.java``. This file contains three parameterized classes ``Model``, ``State`` and ``Transition`` which allow to specify the components of any DP model. Moreover, you will find a class called ``DynamicProgramming`` that will compute the optimal solution of a given DP problem. The **first exercise** is to implement the functions ``getSolution``, ``getValueForState`` and ``rebuildSolution`` in this class.
+    #. You can verify your implementation by running the tests for the Knapsack problem, which is already implemented in ``Knapsack.java``.
+    #. Now it is your turn to implement a DP problem. The *second exercise* concerns the files ``TSP.java`` and ``TSPState.java`` where you need to fill the class representing a state of the TSP model and then implement functions specifying the recurrence you imagined in the first part of the project. Take a look at ``Knapsack.java`` and ``KnapsackState.java`` if you need an example.
+    #. Run the tests for the TSP to see if your implementation is correct and fast enough.
+    #. When you are done, do not forget to *commit* and *push* your changes before submitting your work on Inginious.
+
+
+
 ..
    Exercises
    =======================================
