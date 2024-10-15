@@ -33,13 +33,23 @@ Implementation
 
 All the files related to this project are in the package ``linearprogramming``. You have to modify three classes:
 
-#. ``FlowMatrices.java`` : given a FlowNetwork instance, you must compute the coefficient A, b, c for solving the maximum flow problem with the simplex implementation. To retrieve your solution depending on your matrices, you must also fill in the function ``assignFlow`` in addition to the constructor.
-#. ``MatchingMatrices.java`` : given a bipartite graph, you must compute the coefficient A, b, c for solving the maximum matching problem with the simplex implementation. To retrieve your solution depending on your matrices, you must also fill in the function ``isEdgeSelected`` in addition to the constructor.
-#. ``BigMSimplex.java`` initializes the simplex method, even when negative values for b are given. You need to fill in the simplex tableau to ensure that it finds a correct solution. Here are some inspirations for implementing it:
 
-  - In the class ``LinearProgramming.java`` lies an implementation of the simplex algorithm, without the initialization.
-  - In ``TwoPhaseSimplex.java``, the initialization is done by adding new variables x_a, called *artificial variables*, and transforming the objective function. The new objective consists in minimizing the sum of artificial variables: instead of encoding in the simplex tableau
+#. ``BigMSimplex.java`` 
+#. ``FlowMatrices.java`` 
+#. ``MatchingMatrices.java`` 
 
+BigMSimplex
+~~~~~~~~~~~~~~
+
+In case the the :math:``b`` vector contains negative entries, the simplex method cannot start directly.
+A first phase, using the simplex on a transformed problem is needed to find a basic feasible solution.
+Once this basic feasible solution is found, the second phase purse, also with the simplex on the the original objective.
+This is the method implemented in the ``TwoPhaseSimplex.java`` that is provided.
+In the ``TwoPhaseSimplex.java``, the initialization is done 
+by adding new variables :math:`x_a`, called *artificial variables* so that 
+those new variables compose the first basic feasible solution.
+The simplex can then start pivoting operations while minimizing the sum of those artificial variables.
+More exactly, if the original problem is
 
 .. math::
     \max \quad & cx \\
@@ -47,33 +57,55 @@ All the files related to this project are in the package ``linearprogramming``. 
     & s \ge 0 \\
     & x \ge 0
 
-where :math:`s` are the slack variables, the problem is now
+where :math:`s` are the slack variables, then the transformed problem for the first phase is:
 
 .. math::
-    \max \quad & - sum(x_a) \\
+    \max \quad & - \mathbf{1}^\top x_a  \\
     \text{subject to} \quad & Ax + s + x_a = b \\
     & s \ge 0 \\
     & x \ge 0 \\
     & x_a \ge 0
 
-In the first formulation, if a :math:`b_i` was negative, the corresponding :math:`x_i` could not be used within the base (because it means that :math:`x_i` should be negative, which is prohibited by the last constraints of the problem). The second formulation thus introduces the artificial variables and use them in the base. In the case where a row includes a negative :math:`b_i`, the row is multiplied by :math:`-1` (except for the term :math:`x_a`). Thus, we can assume :math:`b \ge 0` in all cases and solve the problem using :math:`x_a` as the base.
+In the case where a row includes a negative :math:`b_i`, the row is multiplied by :math:`-1` (except for the term :math:`x_a`). 
+Thus, we can assume :math:`b \ge 0` in all cases and solve the problem using :math:`x_a` for the base.
+Once the objective of the first phase has reached zero after pivoting operations,
+it means that all artificial variables are set to 0, and the optimization can switches back to the original objective: :math:`\max cx`.
 
-Once the objective of the second formulation is solved, and that all artificial variables are set to 0, the program switches back to the original objective: :math:`\max cx`.
 
-We ask you to implement a variation of ``TwoPhaseSimplex.java``, that does not work using two phases. Artificial variables are still introduced, but instead of switching between 2 objectives, only one objective is used. The algorithm takes as input a large constant :math:`M >> 0`, and tackles the problem (in tableau form):
+This ``TwoPhase`` simplex method is is very popular.
+We propose that you implement and test an alternative method, called ``BigMSimplex.java`` to cope with possibly negative value for :math:`b_i` entries.
+This method does not use two phases but still introduces artificial variables.
+Instead of switching between two objectives, only one objective is used. 
+This method uses a large constant :math:`M >> 0` (called big-M), and solve following problem (in tableau form):
+
 
 .. math::
-    \max \quad & cx - M \,sum(x_a)\\
+    \max \quad & cx - M \, (\mathbf{1}^\top x_a) \\
     \text{subject to} \quad & Ax + s + x_a = b \\
     & s \ge 0 \\
     & x \ge 0 \\
     & x_a \ge 0
 
-Given that the second term is much larger than the first, this forces the simplex to do a lexicographic search: it will first minimize the use of artificial variables (:math:`\max - M \, sum(x_a)`) and then maximize the original objective (:math:`\max cx`). Your implementation needs to be done within ``BigMSimplex.java``.
+Given that the second term is much larger than the first, this will enforce a lexicographic optimization of the two objectives: first, minimizing the use of artificial variables (:math:`\max \, (\mathbf{1}^\top x_a)`) then maximize the original objective (:math:`\max cx`) as a tie-breaker.
+Similar to the two-phase simplex method, a first basic feasible solution is readily available with :math:`x_a` as the base.
+Your implementation should be completed within ``BigMSimplex.java``.
 
 You can test your code by running the example in ``DietProblem.java``, that solves the `Diet problem <https://en.wikipedia.org/wiki/Stigler_diet>`_ .
 
 Once your code is ready, you can submit it onto inginious and work on the report.
+
+
+FlowMatrices
+~~~~~~~~~~~~~~
+
+Given a FlowNetwork instance, you must compute the coefficient A, b, c for solving the maximum flow problem with the simplex implementation. 
+To retrieve your solution depending on your matrices, you must also fill in the function ``assignFlow`` in addition to the constructor.
+
+MatchingMatrices
+~~~~~~~~~~~~~~~~~~~
+
+Given a bipartite graph, you must compute the coefficient A, b, c for solving the maximum matching problem with the simplex implementation. 
+To retrieve your solution depending on your matrices, you must also fill in the function ``isEdgeSelected`` in addition to the constructor.
 
 Gradescope
 --------------
