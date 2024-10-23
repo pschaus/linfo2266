@@ -10,8 +10,7 @@ Theory
 
 .. * `Videos <https://youtube.com/playlist?list=PLq6RpCDkJMyoSSeucDx7FyUpMDjhc-Kyf>`_
 
-* `Slides <../_static/slides/04-linear-programming.pdf>`_
-
+* `Slides Linear Programming <../_static/slides/04-linear-programming.pdf>`_
 
 
 Project: Linear Programming and Maximum-Flows
