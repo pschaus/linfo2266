@@ -18,6 +18,7 @@ LINFO2266: Advanced Algorithms for Optimization
    lagrangian/index
    lp/index
    flows/index
+   ls/index
    competition/index
    
 ..
