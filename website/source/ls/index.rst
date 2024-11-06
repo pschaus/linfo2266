@@ -12,8 +12,6 @@ Theory
 * `Slides <../_static/slides/06-local-search.pdf>`_
 
 
-Read and understand the source code of package minils and the sudoku example on `github <https://github.com/pschaus/linfo2266/tree/master/src/main/java/localsearch/minils>`_.
-
 * Part 2: LS Routing Problems
 
 Project : TSP
