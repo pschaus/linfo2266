@@ -12,8 +12,6 @@ Theory
 * `Slides <../_static/slides/06-local-search.pdf>`_
 
 
-* Part 2: LS Routing Problems
-
 Project : TSP
 =======================================
 Your goal is to implement methods used in a local search to solve the Traveler Salesman Problem. In the base code given, a solution is represented by a list of integers representing cities. For instance the list ``[2,0,1]`` represents the tour going like this : ``2 -> 0 -> 1 -> 2``. It is important to differentiate the operations applied index-wise and city-wise. For instance, the ``twoOpt`` method in ``Candidate`` class is applied index-wise, while the distance method in ``TSPInstance`` class is applied city-wise.
