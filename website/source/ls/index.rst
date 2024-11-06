@@ -18,7 +18,21 @@ Read and understand the source code of package minils and the sudoku example on 
 
 Project : TSP
 =======================================
-your goal is to implement methods used in a local search to solve the TSP problem. In the base code given, a solution is represented by a list of integers representing cities. For instance the list ``[2,0,1]`` represents the tour going like this : ``2 -> 0 -> 1 -> 2``. It is important to differentiate the operations applied index-wise and city-wise. For instance, the ``twoOpt`` method in ``Candidate`` class is applied index-wise, while the distance method in ``TSP`` class is applied city-wise.
+Your goal is to implement methods used in a local search to solve the Traveler Salesman Problem. In the base code given, a solution is represented by a list of integers representing cities. For instance the list ``[2,0,1]`` represents the tour going like this : ``2 -> 0 -> 1 -> 2``. It is important to differentiate the operations applied index-wise and city-wise. For instance, the ``twoOpt`` method in ``Candidate`` class is applied index-wise, while the distance method in ``TSPInstance`` class is applied city-wise.
+
+Implementation
+---------------
+
+All the files related to this project are in the package ``localsearch``. You have to modify six classes:
+
+
+#. ``Candidate.java`` 
+#. ``BestSelection.java`` 
+#. ``KOptSelection.java`` 
+#. ``BestWithTabuSelection.java`` 
+#. ``BeamSearchInitialization.java`` 
+#. ``PilotInitialization.java`` 
+
 
 Two Opt
 ~~~~~~~~~~~~~~
@@ -33,7 +47,7 @@ The most important part of a local search is the neighbor selection. The class `
 KOpt Selection
 ~~~~~~~~~~~~~~
 
-In the ``KOptSelection``, a twoOpt is applied repeatly. During k iterations, the best neighbor is selected and the candidate is saved. The method ``getNeighbor`` should return the best candidate found after k iterations. Note : the best candidate is the one that minimizes the total distance of the tour not the last obtained.
+In the ``KOptSelection``, a twoOpt is applied repeatly. During ``k`` iterations, the best neighbor is selected and the candidate is saved. The method ``getNeighbor`` should return the best candidate found after k iterations. Note : the best candidate is the one that minimizes the total distance of the tour not the last obtained.
 
 Tabu
 ~~~~~~~~
@@ -48,7 +62,13 @@ Another important component of the local search is the initialization of the sol
 Pilot Initialization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A common initialization method is the greedy method. You start at a city then iteratively add the closest city to the current tour. The Pilot initialization is method that builds the solution by adding one city at a time but by considering the cost of the partial solution to be the cost of the solution if it was completed using a greedy method. This creates a direct relationship between the Beamsearch initialization and the Pilot initialization as the Pilot initialization is a specialization of the Beamsearch initialization with k = 1.
+A common initialization method is the greedy method. You start at a city then iteratively add the closest city to the current tour. The Pilot initialization is a method that builds the solution by adding one city at a time but by considering the cost of the partial solution to be the cost of the solution if it was completed using a greedy method. This creates a direct relationship between the Beamsearch initialization and the Pilot initialization as the Pilot initialization is a specialization of the Beamsearch initialization with ``k = 1``. Implement the ``PilotInitialization.java`` class.
+
+Gradescope
+---------------
+
+On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project.
+Part of your assignment requires to report experimental results under the form of a graph.
 
 
 ..
