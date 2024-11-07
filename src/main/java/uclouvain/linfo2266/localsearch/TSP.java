@@ -207,7 +207,7 @@ public class TSP {
                 iter += 1;
                 
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(1);
                 } catch (Exception e){
 
                 }

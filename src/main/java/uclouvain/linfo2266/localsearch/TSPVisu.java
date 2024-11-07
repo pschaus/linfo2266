@@ -118,7 +118,7 @@ public class TSPVisu extends Application {
 
         TSP.TSPInstance instance = new TSP.TSPInstance(500,0, 200);
         TSP.TSPLocalSearch ls = new TSP.TSP2Opt(instance);
-        //TSP.TSPLocalSearch ls = new TSP.TSPKopt(instance);
+        //TSP.TSPLocalSearch ls = new TSP.TSPKOpt(instance, 7);
 
         SplitPane sp = new SplitPane();
 
