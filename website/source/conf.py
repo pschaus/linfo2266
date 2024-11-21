@@ -163,7 +163,7 @@ html_static_path = ['_static/']
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
 html_show_copyright = False
-author = u'Pierre Schaus, Vianney Coppé'
+author = u'Pierre Schaus'
 
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
@@ -174,7 +174,7 @@ author = u'Pierre Schaus, Vianney Coppé'
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'LINFO1121'
+htmlhelp_basename = 'LINFO2266'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -193,7 +193,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'linfo1121.tex', u'LINFO1121',
+  ('index', 'linfo2266.tex', u'LINFO2266',
    u'Pierre Schaus', 'manual'),
 ]
 
