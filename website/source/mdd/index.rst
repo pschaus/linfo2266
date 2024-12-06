@@ -22,9 +22,9 @@ the maximum decarbonation problem.
 Solver implementation
 ---------------------------
 
-To get started with your implementation of the `SequentualSolver` we advise you
-to go read the pseudo-code given in the slides and then to give a look at the
-parallel version which is implemented for you (`ParallelSolver`). 
+To get started with you must complete the implementation of the `SequentialSolver`.
+We we advise you to read first carefully the pseudo-code given in the slides 
+and then to give a look at the parallel version which is implemented for you (`ParallelSolver`). 
 
 Once you are done with the implementation of your sequential solver, you will be
 able to validate it against the tests in `TestSequentialSolver`.
@@ -32,7 +32,24 @@ able to validate it against the tests in `TestSequentialSolver`.
 Modeling the Max Decarbonation Problem
 -----------------------------------------
 
-After that, you are asked to model the maximum decarbonation problem in terms
+
+To decarbonate the European economy, Mrs. From-the-Streets, minister of energy,
+has decided to refresh electric infrastructure and build new nuclear plants all over the
+continent. This, however, has to be done in a principled way and no two power plants can
+be located too close to one another as there is a risk it would cause excess tension.
+Given a map of the infrastructure with candidateOld build sites, you are asked to find
+the set of locations where to construct power plants without violating safety constraints.
+
+In practice, the map will be given to you in the form of a sizeable \emph{undirected} graph.
+In that graph, each node represents a candidateOld build site, and two sites are connected
+with an edge if they are too close to one another (or more generally, if building a power
+plant at both sites causes a potential safety hazard). The problem which you are asked to
+solve is thus the following: you must find a maximum subset of the nodes in the graph
+such that no two construction sites are connected with an edge in the underlying graph.
+
+
+
+You are asked to model the maximum decarbonation problem in terms
 of dynamic programming. To that end, you will want to start by defining the
 content of your `state` (class `MaximumDecarbonationState`) and then to implement
 the required methods in `MaximumDecarbonationProblem`. 
