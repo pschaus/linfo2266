@@ -19,18 +19,18 @@ Evalutation
 January
 """""""""
 
-For the first session, the global grade for the course is solely based on the grades of the 6 computing projects, submitted and evaluated during the semester.
+For the first session, the overall course grade is weighted as follows: 45% projects and reports, 45% written exam, and 10% course participation.
 
 August
 """"""""
 
-For the second session, previously submitted projects will not be re-evaluated and cannot be resubmitted.
-The project grade will count for 10 points in the second session, and a new project will be proposed, also worth 10 points, to improve the grade.
-This new project will be an individual programming project.
-It will require a written report, and if the professor deems it necessary, an interview about the project may also be arranged to ensure all theoretical concepts are well understood.
+For the second session, projects and reports cannot be resubmitted. 
+Only the exam component (worth 45%) can be retaken, either as an oral exam or a written exam.
 
-Projects are invididual.
-Neverthess, In this course, we recognize the evolving nature of technology and the potential benefits of using generative AI tools in the programming process. However, academic honesty and originality remain paramount. To that end:
+Collaboration rules and AI usage policy
+==========================================
+
+Projects are invididual. Neverthess, In this course, we recognize the evolving nature of technology and the potential benefits of using generative AI tools in the programming process. However, academic honesty and originality remain paramount. To that end:
 
 * Generative AI Usage: Students are permitted to use generative AI tools to assist with their assignments. Such tools can provide inspiration, suggest coding approaches, or help troubleshoot issues.
 * Original Work: While AI can be a tool, it should not be the sole author of your assignment. Your submission should be primarily your own work. Directly copying and pasting solutions from AI outputs without understanding or modification is discouraged. Similarly, collaborating with fellow students is a valuable part of the learning process, but directly copying another student's work is considered plagiarism.
@@ -46,7 +46,6 @@ Neverthess, In this course, we recognize the evolving nature of technology and t
 Failure to adhere to these guidelines may result in a reduction of marks or other academic penalties.
 The same consequences will hold for a student that voluntarily shares his code or make available to other students (this includes sharing your code on a public or private repository).
 If deemed necessary by the instructor, an interview about the projects may also be conducted.
-
 
 
 Tools
@@ -73,8 +72,8 @@ Below are some instructions on how to set up and use these two tools, followed b
 Gradescope
 """"""""""""""""
 
-#. Go to `Gradescope <https://www.gradescope.com/courses/869042>`_ and connect with your UCLouvain account.
-#. Add the LINFO2266-2024-2025 (Course ID: 869042) course by clicking on **Enroll in Course** and entering the code 7E5W86.
+#. Go to `Gradescope <https://www.gradescope.com/courses/1133415>`_ and connect with your UCLouvain account.
+#. Add the LINFO2266-2025-2026 (Course ID: 1133415) course by clicking on **Enroll in Course** and entering the code D3VYJP.
 #. You will find the theoretical part of the projects there, which consist of a PDF document with a few questions.
 #. Answer these questions either by printing the document or filling it on your computer. *If you follow the instructions for the Inginious part, you will find the .tex files in the* ``tex/`` *folder of the repository so you can fill them directly.*
 #. Do not forget to submit your answers on Gradescope when you are done.

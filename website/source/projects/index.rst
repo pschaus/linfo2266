@@ -13,7 +13,7 @@ Gradescope
 ===================================================
 
 #. Go to `Gradescope <https://www.gradescope.com/>`_ and connect with your UCLouvain account.
-#. Add the LINFO2266-2023-2024 (Course ID: 625917) course by clicking on **Enroll in Course** and entering the code JK7D4D.
+#. Add the LINFO2266-2024-2025 (Course ID: 1133415) course by clicking on **Enroll in Course** and entering the code D3VYJP.
 #. You will find the theoretical part of the projects there, which consist of a PDF document with a few questions.
 #. Answer these questions either by printing the document or filling it on your computer. *If you follow the instructions for the Inginious part, you will find the .tex files in the* ``tex/`` *folder of the repository so you can fill them directly.*
 #. Do not forget to submit your answers on Gradescope when you are done.
