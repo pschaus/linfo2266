@@ -27,15 +27,15 @@ public class BranchAndBoundKnapsack {
         }
 
         // sort decreasing according to value/weight ratio
-        /*
+
         sortValueOverWeight(value,weight);
         for (int i = 0; i < n-1; i++) {
             assert ((double) value[i]/weight[i] > (double) value[i-1]/weight[i+1]);
-        }*/
+        }
 
 
-        //OpenNodes<NodeKnapsack> openNodes = new BestFirstOpenNodes<>();
-        OpenNodes<NodeKnapsack> openNodes = new DepthFirstOpenNodes<>();
+        OpenNodes<NodeKnapsack> openNodes = new BestFirstOpenNodes<>();
+        //OpenNodes<NodeKnapsack> openNodes = new DepthFirstOpenNodes<>();
 
         NodeKnapsack root = new NodeKnapsack(null,value,weight,0,capa,-1,false);
         openNodes.add(root);
@@ -81,8 +81,8 @@ class NodeKnapsack implements Node {
         this.capaLeft = capaLeft;
         this.index = index;
         this.selected = selected;
-        this.ub = capacityRelaxUBound();
-        //this.ub = lpRelaxUBound();
+        //this.ub = capacityRelaxUBound();
+        this.ub = lpRelaxUBound();
     }
 
     private double capacityRelaxUBound() {
@@ -136,6 +136,7 @@ class NodeKnapsack implements Node {
                     index + 1, true);
             children.add(left);
         }
+
         return children;
     }
 

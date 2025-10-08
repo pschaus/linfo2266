@@ -16,8 +16,8 @@ LINFO2266: Advanced Algorithms for Optimization
    dp/index
    bench/index
    bandb/index
-..   lagrangian/index
-   lp/index
+   lagrangian/index
+..   lp/index
    flows/index
    ls/index
    cp/index
