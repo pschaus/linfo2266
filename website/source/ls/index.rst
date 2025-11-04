@@ -26,10 +26,11 @@ All the files related to this project are in the package ``localsearch``. You ha
 
 #. ``Candidate.java`` 
 #. ``BestSelection.java`` 
-#. ``KOptSelection.java`` 
 #. ``BestWithTabuSelection.java`` 
 #. ``BeamSearchInitialization.java`` 
-#. ``PilotInitialization.java`` 
+#. ``BeamSearchAppend.java`` 
+#. ``BeamSearchInsert.java`` 
+#. ``LKH.java`` 
 
 
 Two Opt
@@ -42,11 +43,6 @@ Best Selection
 
 The most important part of a local search is the neighbor selection. The class ``FirstSelection.java`` contains the method ``getNeighbor`` that returns the first improving neighbor found among all ``twoOpt`` movements possible. You are asked to implement the same method in the class ``BestSelection.java``. This method should return the best improving neighbor found among all ``twoOpt`` movements possible. The best neighbor is the one that minimizes the total distance of the tour. If no improving neighbor is found, the method should return the ``Candidate`` given in argument.
 
-KOpt Selection
-~~~~~~~~~~~~~~
-
-In the ``KOptSelection``, a twoOpt is applied repeatly. During ``k`` iterations, the best neighbor is selected and the candidate is saved. The method ``getNeighbor`` should return the best candidate found after k iterations. Note : the best candidate is the one that minimizes the total distance of the tour not the last obtained.
-
 Tabu
 ~~~~~~~~
 
@@ -55,12 +51,12 @@ Tabu is a common metaheuristic used in local search. The idea is to avoid return
 BeamSearch Initialization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Another important component of the local search is the initialization of the solution. In the ``BeamSearchInitialization.java`` class, you are asked to implement the ``getInitialSolution`` method that returns an initial candidate. To obtain the initial candiate, you need to construct a tour by starting at city 0 and selecting the best city to add to the partial solution. At each iteration you need to only keep k best partial solution. 
+Another important component of the local search is the initialization of the solution. In the ``BeamSearchInitialization.java`` class, you are asked to implement the ``getInitialSolution`` method that returns an initial candidate. To obtain the initial candidate, you need to construct a tour by starting at city 0 and selecting the best city to add to the partial solution. At each iteration you need to only keep k best partial solution. Next, in ``BeamSearchAppend.java`` and ``BeamSearchInsert.java`` implement the expand function so that the beamsearch constructs solution only by appending to the end or inserting anywhere is the current partial solution.
 
-Pilot Initialization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+LKH
+~~~~~~~~~~~~~~
+LKH is a strong heuristic to improve an existing solution. This heuristic uses a reference structure as a temporary solution to apply improving move and convert it back to a candidate solution. With the help of the pseudo code, implement the methods in ``LKH.java``
 
-A common initialization method is the greedy method. You start at a city then iteratively add the closest city to the current tour. The Pilot initialization is a method that builds the solution by adding one city at a time but by considering the cost of the partial solution to be the cost of the solution if it was completed using a greedy method. This creates a direct relationship between the Beamsearch initialization and the Pilot initialization as the Pilot initialization is a specialization of the Beamsearch initialization with ``k = 1``. Implement the ``PilotInitialization.java`` class.
 
 Gradescope
 ---------------
