@@ -56,7 +56,7 @@ Another important component of the local search is the initialization of the sol
 
 LKH
 ~~~~~~~~~~~~~~
-LKH is a strong heuristic to improve an existing solution. This heuristic uses a reference structure as a temporary solution to apply improving move and convert it back to a candidate solution. With the help of the pseudo code, implement the methods in ``LKH.java``
+LKH is a strong heuristic to improve an existing solution. This heuristic uses a reference structure as a temporary solution to apply improving move and convert it back to a candidate solution. With the help of the pseudo code, implement the methods in ``LKH.java``. Note the methods ``findBestC`` and  ``reversePath`` are given to help you implement ``applyLKH``
 
 
 Gradescope
