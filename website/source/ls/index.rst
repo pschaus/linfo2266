@@ -52,7 +52,7 @@ Tabu is a common metaheuristic used in local search. The idea is to avoid return
 BeamSearch Initialization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Another important component of the local search is the initialization of the solution. In the ``BeamSearchInitialization.java`` class, you are asked to implement the ``getInitialSolution`` method that returns an initial candidate. To obtain the initial candidate, you need to construct a tour by starting at city 0 and selecting the best city to add to the partial solution. At each iteration you need to only keep k best partial solution. Next, in ``BeamSearchAppend.java`` and ``BeamSearchInsert.java`` implement the expand function so that the beamsearch constructs solution only by appending to the end or inserting anywhere is the current partial solution.
+Another important component of the local search is the initialization of the solution. In the ``BeamSearchInitialization.java`` class, you are asked to implement the ``getInitialSolution`` method that returns an initial candidate. To obtain the initial candidate, you need to construct a tour by starting at city 0 and selecting the best city to add to the partial solution. At each iteration you need to only keep p (beamWidth) best partial solution. Next, in ``BeamSearchAppend.java`` and ``BeamSearchInsert.java`` implement the expand function so that the beamsearch constructs solution only by appending to the end or inserting anywhere is the current partial solution. Following the course naming convention, k = lookAhead = 1.
 
 LKH
 ~~~~~~~~~~~~~~
