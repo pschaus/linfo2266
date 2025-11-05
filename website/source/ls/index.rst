@@ -9,8 +9,9 @@ Theory
 =======================================
 
 
-* `Slides <../_static/slides/06-local-search.pdf>`_
+..* `Slides <../_static/slides/06-local-search.pdf>`_
 
+Slides coming soon ...
 
 Project : TSP with Local Search
 =======================================
