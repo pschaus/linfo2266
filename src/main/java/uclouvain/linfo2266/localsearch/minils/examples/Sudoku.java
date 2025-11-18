@@ -210,7 +210,7 @@ public class Sudoku {
             if (iter > 100000) break;
             iterationTabu(iter++,tabu);
             iterationGreedy(iter++);
-            System.out.println(violation.value());
+            //System.out.println(violation.value());
         }
     }
 

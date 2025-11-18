@@ -20,8 +20,8 @@ LINFO2266: Advanced Algorithms for Optimization
    lp/index
    flows/index
    ls/index
-..   cp/index
-   mdd/index
+   cp/index
+..   mdd/index
    competition/index
 
 
