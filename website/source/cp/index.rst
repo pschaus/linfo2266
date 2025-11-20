@@ -18,7 +18,7 @@ Project : Constraint Programming
 
 In the 5th project, you will discover Constraint Programming by solving 3 exercises: the Magic Square, the Killer Sudoku and the Knight-Tour problems.
 Those problems are rather hard to solve, and you will use a Constraint Programming solver to tackle them.
-But first you have to fill in certain functions to ensure that your solver is ready to be used.
+But first you have to complete certain methods to ensure that your solver is ready to be used.
 
 Solver implementation
 ---------------------------
