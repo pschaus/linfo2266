@@ -21,7 +21,7 @@ Gradescope
 ---------------
 
 On `Gradescope <https://www.gradescope.com/>`_, find the written assignment on A*.
-You can already answer to the Exercises 1, while Exercise 2 and 3 will need to wait until you complete your implementation.
+You first need to complete the implementation part to be able to answer to the exercises.
 
 Modeling the TSP Problem
 -----------------------------------------
