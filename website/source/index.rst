@@ -22,9 +22,10 @@ LINFO2266: Advanced Algorithms for Optimization
    ls/index
    cp/index
    astar/index
+   competition/index
 
 ..   mdd/index
-   competition/index
+   
 
 
 ..  colgen/index

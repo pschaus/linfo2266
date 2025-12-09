@@ -11,9 +11,3 @@ Theory
 
 
 * `Slides <../_static/slides/competition.pdf>`_
-
-
-Instructions
-===================================================
-
-More to compe
