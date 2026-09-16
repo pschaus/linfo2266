@@ -5,18 +5,19 @@
 Projects
 *************************************************************************************************
 
-Projects will usually consist of two parts: theoretical questions or exercises to be solved by hand and a programming assignment to put everything you have learned in practice.
-To that end, the course will use two different platforms: Gradescope and Inginious.
-Below are some instructions on how to set up and use these two tools, followed by the project descriptions.
+The programming assignments put everything you have learned in practice.
+Below are some instructions on how to set up and use Inginious, followed by the project descriptions.
 
-Gradescope
-===================================================
+..
+    Gradescope
+    ===================================================
 
-#. Go to `Gradescope <https://www.gradescope.com/>`_ and connect with your UCLouvain account.
-#. Add the LINFO2266-2024-2025 (Course ID: 1133415) course by clicking on **Enroll in Course** and entering the code D3VYJP.
-#. You will find the theoretical part of the projects there, which consist of a PDF document with a few questions.
-#. Answer these questions either by printing the document or filling it on your computer. *If you follow the instructions for the Inginious part, you will find the .tex files in the* ``tex/`` *folder of the repository so you can fill them directly.*
-#. Do not forget to submit your answers on Gradescope when you are done.
+    #. Go to `Gradescope <https://www.gradescope.com/>`_ and connect with your UCLouvain account.
+    #. Add the LINFO2266-2024-2025 (Course ID: 1133415) course by clicking on **Enroll in Course** and entering the code D3VYJP.
+    #. You will find the theoretical part of the projects there, which consist of a PDF document with a few questions.
+    #. Answer these questions either by printing the document or filling it on your computer. *If you follow the instructions for the Inginious part, you will find the .tex files in the* ``tex/`` *folder of the repository so you can fill them directly.*
+    #. Do not forget to submit your answers on Gradescope when you are done.
+
 
 Inginious
 ===================================================
@@ -33,13 +34,15 @@ Inginious
 Project 1: Dynamic Programming
 ===================================================
 
-If not done yet, follow the instructions given above to enroll to the Gradescope and Inginious courses, as well as retrieving the source code of the projects.
+If not done yet, follow the instructions given above to enroll to the Inginious course, as well as retrieving the source code of the projects.
 
 The first project is about Dynamic Programming (DP) and the `Traveling Salesman Problem <https://en.wikipedia.org/wiki/Travelling_salesman_problem>`_ (TSP).
-It consists of 2 parts:
 
-* On `Gradescope <https://www.gradescope.com/>`_, find the assignment on DP where you will learn about the TSP and model it on paper with this technique. Submit your answers when you are ready.
-* Then, go to your personal LINFO2266 Github repository, where you will specify your model and solve real TSP instances.
+..
+    * On `Gradescope <https://www.gradescope.com/>`_, find the assignment on DP where you will learn about the TSP and model it on paper with this technique. Submit your answers when you are ready.
+
+Go to your personal LINFO2266 Github repository, where you will specify your model and solve real TSP instances:
+
     #. In the ``dynamicprogramming`` package, you will find a file called ``DynamicProgramming.java``. This file contains three parameterized classes ``Model``, ``State`` and ``Transition`` which allow to specify the components of any DP model. Moreover, you will find a class called ``DynamicProgramming`` that will compute the optimal solution of a given DP problem. The **first exercise** is to implement the functions ``getSolution``, ``getValueForState`` and ``rebuildSolution`` in this class.
     #. You can verify your implementation by running the tests for the Knapsack problem, which is already implemented in ``Knapsack.java``.
     #. Now it is your turn to implement a DP problem. The *second exercise* concerns the files ``TSP.java`` and ``TSPState.java`` where you need to fill the class representing a state of the TSP model and then implement functions specifying the recurrence you imagined in the first part of the project. Take a look at ``Knapsack.java`` and ``KnapsackState.java`` if you need an example.
@@ -58,10 +61,11 @@ Your implementation work will be in the in the ``branchandbound`` package. As a 
 1. Implement the state/node representation for the BnB search.
 2. Implement a lower-bounding procedure to prune the BnB search.
 
-Gradescope
---------------
+..
+    Gradescope
+    --------------
 
-On `Gradescope <https://www.gradescope.com/>`_, find the written assignment on BnB where you will learn about the TSP and model it on paper with this technique. You can already answer to the Exercises 1 and 2, while Exercise 3 will need to wait until you complete your implementation.
+    On `Gradescope <https://www.gradescope.com/>`_, find the written assignment on BnB where you will learn about the TSP and model it on paper with this technique. You can already answer to the Exercises 1 and 2, while Exercise 3 will need to wait until you complete your implementation.
 
 Implementation
 ---------------
@@ -75,7 +79,9 @@ The implementation work is composed of four steps:
 #. Implement an enhanced bound calculation for the one-tree based on Lagrangian relaxation in the ``HeldKarpOneTree`` class. You can test your result by executing ``HeldKarpOneTreeFast`` and the remaining tests from ``BranchAndBoundTSPTestFast``.
 #. Replace in your branch and bound for the TSP ``BranchAndBoundTSP``, the bound calculation by your new reinforced bound. You can test your result by executing ``BranchAndBoundTSPTest``.
 
-Once your implementation is ready, don't forget to finish your written assignment, by writing your answer for Exercise 3!
+..
+    Once your implementation is ready, don't forget to finish your written assignment, by writing your answer for Exercise 3!
+
 
 Project 3: Linear Programming and Maximum-Flows
 ===================================================
@@ -138,11 +144,13 @@ You can test your code by running the example in ``DietProblem.java``, that solv
 
 Once your code is ready, you can submit it onto inginious and work on the report.
 
-Gradescope
---------------
+..
+    Gradescope
+    --------------
 
-On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project 3.
-Part of your assignment requires to report experimental results under the form of a graph.
+    On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project 3.
+    Part of your assignment requires to report experimental results under the form of a graph.
+
 
 Project 4: Local Search
 ===================================================
@@ -250,13 +258,14 @@ The implementation needs to be done within the ``MagicSquareSolver`` and ``Kille
 In each of those model, you need to give all solutions according to the given input instance by relying on your ``TinyCSP`` solver.
 You can also refer to the already implemented ``NQueens`` model if you wish to see how variables should be created, how to add constraints and how to solve a problem.
 
-Gradescope
----------------
+..
+    Gradescope
+    ---------------
 
-On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about constraint programming.
-You will first give some details about the modeling of a Magic Square Problem.
-Afterwards, you will examine how to derive additional solutions by examining the symmetries within the problem.
-Finally, a last step will ask you to run some experiments using your solver.
+    On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about constraint programming.
+    You will first give some details about the modeling of a Magic Square Problem.
+    Afterwards, you will examine how to derive additional solutions by examining the symmetries within the problem.
+    Finally, a last step will ask you to run some experiments using your solver.
 
 
 Project 6: MDD
@@ -298,14 +307,16 @@ used to compare states and select the ones that are deemed the most promising
 Then, you will validate your implementation work using: the tests in 
 `TestMaximumDecarbonationFast` and `TestMaximumDecarbonation`.
 
-Gradescope
----------------
+..
+    Gradescope
+    ---------------
 
-On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about branch-and-bound with decision diagrams.
-You will first get a hands-on reminder of what relaxed and restricted DDs are.
-Afterwards, you will give the details of how to model the maximum decarbonation
-problem in terms of dynamic programming along with a relaxation to merge nodes
-when a layer grows too large.
+    On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about branch-and-bound with decision diagrams.
+    You will first get a hands-on reminder of what relaxed and restricted DDs are.
+    Afterwards, you will give the details of how to model the maximum decarbonation
+    problem in terms of dynamic programming along with a relaxation to merge nodes
+    when a layer grows too large.
+
 
 
 ..

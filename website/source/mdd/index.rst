@@ -67,13 +67,15 @@ used to compare states and select the ones that are deemed the most promising
 Then, you will validate your implementation work using: the tests in 
 `TestMaximumDecarbonationFast` and `TestMaximumDecarbonation`.
 
-Gradescope
----------------
+..
+    Gradescope
+    ---------------
 
-On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about branch-and-bound with decision diagrams.
-You will first get a hands-on reminder of what relaxed and restricted DDs are.
-Afterwards, you will give the details of how to model the maximum decarbonation
-problem in terms of dynamic programming along with a relaxation to merge nodes
-when a layer grows too large.
+    On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about branch-and-bound with decision diagrams.
+    You will first get a hands-on reminder of what relaxed and restricted DDs are.
+    Afterwards, you will give the details of how to model the maximum decarbonation
+    problem in terms of dynamic programming along with a relaxation to merge nodes
+    when a layer grows too large.
+
 
 

@@ -24,11 +24,13 @@ Your implementation work will be in the in the ``branchandbound`` package. As a 
 1. Implement the state/node representation for the BnB search.
 2. Implement a lower-bounding procedure to prune the BnB search.
 
-Gradescope
---------------
+..
+    Gradescope
+    --------------
 
-On `Gradescope <https://www.gradescope.com/>`_, find the written assignment on BnB where you will learn about the TSP and model it on paper with this technique. 
-You can already answer to the Exercises 1, while Exercise 2 and 3 will need to wait until you complete your implementation.
+    On `Gradescope <https://www.gradescope.com/>`_, find the written assignment on BnB where you will learn about the TSP and model it on paper with this technique. 
+    You can already answer to the Exercises 1, while Exercise 2 and 3 will need to wait until you complete your implementation.
+
 
 Implementation
 ---------------

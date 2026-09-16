@@ -55,14 +55,16 @@ There are two problems to model in this project:
 The implementation needs to be done within the ``KnightTourSolver`` by completing the TODO's.
 You'll also need to implement the ``KnightMove`` constraint.
 
-Gradescope
----------------
+..
+    Gradescope
+    ---------------
 
-On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about constraint programming.
-You will first give some details about the modeling of a Magic Square Problem.
-Afterwards, you will examine how to derive additional solutions by examining the symmetries within the problem.
-Finally, a last step will ask you to run some experiments using your solver.
-You'll also study an interesting alternative model for the KnightTour problem.
+    On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project about constraint programming.
+    You will first give some details about the modeling of a Magic Square Problem.
+    Afterwards, you will examine how to derive additional solutions by examining the symmetries within the problem.
+    Finally, a last step will ask you to run some experiments using your solver.
+    You'll also study an interesting alternative model for the KnightTour problem.
+
 
 ..
     Exercises

@@ -95,41 +95,62 @@ pygments_style = 'sphinx'
 #html_theme = 'sphinxdoc'
 #html_theme = "classic"
 
-#import sphinx_rtd_theme
-html_theme = "bizstyle"
-#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-
-
+html_theme = "furo"
 
 # Theme options are theme-specific and customize the look and feel of a theme
-# further.  For a list of options available for each theme, see the
-# documentation.
-#html_theme_options = {}
+html_theme_options = {
+    "light_logo": "linfo2266_logo_light.png",
+    "dark_logo": "linfo2266_logo_dark.png",
+    "sidebar_hide_name": False,
+    "navigation_with_keys": True,
+    "light_css_variables": {
+        "color-brand-primary": "#1d4ed8",          # Deep royal blue
+        "color-brand-content": "#2563eb",          # Royal blue
+        "color-sidebar-background": "#f8fafc",     # Slate 50
+        "color-sidebar-background-border": "#e2e8f0",
+        "color-sidebar-caption-text": "#64748b",
+        "color-sidebar-link-text": "#334155",
+        "color-sidebar-link-text--top-level": "#0f172a",
+        "color-sidebar-item-background--hover": "#eff6ff",
+        "color-sidebar-item-background--current": "#dbeafe",
+        "color-admonition-title--note": "#1d4ed8",
+        "color-admonition-title-background--note": "#eff6ff",
+        "color-admonition-title--tip": "#0284c7",
+        "color-admonition-title-background--tip": "#f0f9ff",
+        "color-highlight-on-target": "#e0f2fe",
+    },
+    "dark_css_variables": {
+        "color-brand-primary": "#60a5fa",          # Sky blue
+        "color-brand-content": "#93c5fd",          # Soft blue
+        "color-sidebar-background": "#0b1329",     # Deep navy slate
+        "color-sidebar-background-border": "#1e293b",
+        "color-sidebar-caption-text": "#94a3b8",
+        "color-sidebar-link-text": "#cbd5e1",
+        "color-sidebar-link-text--top-level": "#f8fafc",
+        "color-sidebar-item-background--hover": "#1e293b",
+        "color-sidebar-item-background--current": "#1e3a8a44",
+        "color-admonition-title--note": "#60a5fa",
+        "color-admonition-title-background--note": "#1e3a8a33",
+        "color-admonition-title--tip": "#38bdf8",
+        "color-admonition-title-background--tip": "#0369a133",
+        "color-highlight-on-target": "#1e3a8a55",
+    },
+}
 
-# Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
+html_title = "LINFO2266: Advanced Algorithms for Optimization"
 
-# The name for this set of Sphinx documents.  If None, it defaults to
-# "<project> v<release> ".
-#html_title = ""
+# When light_logo and dark_logo are defined in html_theme_options, html_logo can be omitted
+# html_logo = "_static/linfo2266_logo_light.png"
 
-# A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = None
 
-# The name of an image file (relative to this directory) to place at the top
-# of the sidebar.
-html_logo = "other/LINFO2266.jpg"
+# The name of an image file (within the static path) to use as favicon
+html_favicon = "_static/favicon.ico"
 
-# The name of an image file (within the static path) to use as favicon of the
-# docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
-# pixels large.
-html_favicon = "other/favicon.ico"
+# Add any paths that contain custom static files here
+html_static_path = ['_static']
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static/']
+# Custom CSS files
+html_css_files = ['css/custom.css']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.

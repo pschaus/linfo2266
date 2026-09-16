@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Background subtle radial glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Linear gradient for optimal path -->
+    <linearGradient id="optPathGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="35%" stop-color="#0ea5e9"/>
+      <stop offset="70%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#00f5d4"/>
+    </linearGradient>
+
+    <!-- Node gradients -->
+    <radialGradient id="optNodeGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="40%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </radialGradient>
+
+    <radialGradient id="normNodeGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background aura -->
+  <circle cx="250" cy="250" r="230" fill="url(#bgGlow)"/>
+
+  <!-- BASE GRAPH (Network Edges) -->
+  <g stroke="#3b82f6" stroke-width="3.5" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer hexagon (R=190) -->
+    <polygon points="250,60 414.5,155 414.5,345 250,440 85.5,345 85.5,155" fill="none"/>
+
+    <!-- Middle hexagon (R=125) -->
+    <polygon points="250,125 358.3,187.5 358.3,312.5 250,375 141.7,312.5 141.7,187.5" fill="none" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+
+    <!-- Radial & Tree / Triangulation Lines -->
+    <line x1="250" y1="60" x2="250" y2="125"/>
+    <line x1="414.5" y1="155" x2="358.3" y2="187.5"/>
+    <line x1="414.5" y1="345" x2="358.3" y2="312.5"/>
+    <line x1="250" y1="440" x2="250" y2="375"/>
+    <line x1="85.5" y1="345" x2="141.7" y2="312.5"/>
+    <line x1="85.5" y1="155" x2="141.7" y2="187.5"/>
+
+    <!-- Central cross connections (polyhedral simplex triangulation) -->
+    <line x1="250" y1="125" x2="250" y2="250"/>
+    <line x1="358.3" y1="187.5" x2="250" y2="250"/>
+    <line x1="358.3" y1="312.5" x2="250" y2="250"/>
+    <line x1="250" y1="375" x2="250" y2="250"/>
+    <line x1="141.7" y1="312.5" x2="250" y2="250"/>
+    <line x1="141.7" y1="187.5" x2="250" y2="250"/>
+
+    <line x1="250" y1="60" x2="358.3" y2="187.5" stroke-opacity="0.2"/>
+    <line x1="414.5" y1="155" x2="250" y2="125" stroke-opacity="0.2"/>
+    <line x1="414.5" y1="345" x2="250" y2="375" stroke-opacity="0.2"/>
+    <line x1="250" y1="440" x2="141.7" y2="312.5" stroke-opacity="0.2"/>
+    <line x1="85.5" y1="345" x2="250" y2="375" stroke-opacity="0.2"/>
+    <line x1="85.5" y1="155" x2="250" y2="125" stroke-opacity="0.2"/>
+  </g>
+
+  <!-- OPTIMAL PATH / HAMILTONIAN CYCLE (Vibrant glowing blue & cyan tour) -->
+  <g filter="url(#glow)">
+    <polyline points="
+      250,60
+      414.5,155
+      358.3,187.5
+      358.3,312.5
+      250,250
+      141.7,187.5
+      85.5,155
+      85.5,345
+      141.7,312.5
+      250,375
+      414.5,345
+      250,440
+      141.7,312.5
+    "
+    fill="none"
+    stroke="url(#optPathGrad)"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+  </g>
+
+  <!-- SECOND LAYER CRISP HIGHLIGHT FOR OPTIMAL PATH -->
+  <polyline points="
+    250,60
+    414.5,155
+    358.3,187.5
+    358.3,312.5
+    250,250
+    141.7,187.5
+    85.5,155
+    85.5,345
+    141.7,312.5
+    250,375
+    414.5,345
+    250,440
+    141.7,312.5
+  "
+  fill="none"
+  stroke="#ffffff"
+  stroke-width="2.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-opacity="0.85"/>
+
+  <!-- STANDARD GRAPH NODES -->
+  <g>
+    <!-- Outer nodes not on active path: none here, all connected -->
+  </g>
+
+  <!-- OPTIMAL / ACTIVE NODES WITH VIBRANT GLOW -->
+  <g filter="url(#subtleGlow)">
+    <!-- Outer vertices -->
+    <circle cx="250" cy="60" r="12" fill="url(#optNodeGrad)" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="414.5" cy="155" r="12" fill="url(#optNodeGrad)" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="414.5" cy="345" r="12" fill="url(#optNodeGrad)" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="250" cy="440" r="12" fill="url(#optNodeGrad)" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="85.5" cy="345" r="12" fill="url(#optNodeGrad)" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="85.5" cy="155" r="12" fill="url(#optNodeGrad)" stroke="#ffffff" stroke-width="3"/>
+
+    <!-- Inner vertices -->
+    <circle cx="250" cy="125" r="9" fill="url(#normNodeGrad)" stroke="#60a5fa" stroke-width="2"/>
+    <circle cx="358.3" cy="187.5" r="11" fill="url(#optNodeGrad)" stroke="#ffffff" stroke-width="2.5"/>
+    <circle cx="358.3" cy="312.5" r="11" fill="url(#optNodeGrad)" stroke="#ffffff" stroke-width="2.5"/>
+    <circle cx="250" cy="375" r="11" fill="url(#optNodeGrad)" stroke="#ffffff" stroke-width="2.5"/>
+    <circle cx="141.7" cy="312.5" r="11" fill="url(#optNodeGrad)" stroke="#ffffff" stroke-width="2.5"/>
+    <circle cx="141.7" cy="187.5" r="11" fill="url(#optNodeGrad)" stroke="#ffffff" stroke-width="2.5"/>
+
+    <!-- Central core optimum vertex -->
+    <circle cx="250" cy="250" r="15" fill="#00f5d4" stroke="#ffffff" stroke-width="4"/>
+    <circle cx="250" cy="250" r="6" fill="#0369a1"/>
+  </g>
+</svg>

@@ -17,11 +17,13 @@ In the 6th project, you will optimize TSP using A* like algorithms.
 You are asked to implement: a dynamic programming model for TSP and two A* variants:
 the Weighted A* and the Anytime Weighted A*.
 
-Gradescope
----------------
+..
+    Gradescope
+    ---------------
 
-On `Gradescope <https://www.gradescope.com/>`_, find the written assignment on A*.
-You first need to complete the implementation part to be able to answer to the exercises.
+    On `Gradescope <https://www.gradescope.com/>`_, find the written assignment on A*.
+    You first need to complete the implementation part to be able to answer to the exercises.
+
 
 Modeling the TSP Problem
 -----------------------------------------

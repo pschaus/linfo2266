@@ -17,6 +17,12 @@ target/
 
 # Sphinx
 website/build/
+website/myvenv/
+myvenv/
+venv/
+.venv/
+__pycache__/
+*.pyc
 
 # LaTeX
 *.ps

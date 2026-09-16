@@ -1,5 +1,6 @@
-docutils<0.18
-Sphinx == 5.2.2
-sphinxcontrib-bibtex == 2.5.0
+Sphinx>=7.0
+furo>=2024.1.0
+sphinxcontrib-bibtex>=2.5.0
 sphinxcontrib-svg2pdfconverter>=1.2.2
 cairosvg>=2.7.1
+pillow>=10.0.0

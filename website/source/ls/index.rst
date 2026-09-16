@@ -59,11 +59,13 @@ LKH
 LKH is a strong heuristic to improve an existing solution. This heuristic uses a reference structure as a temporary solution to apply improving move and convert it back to a candidate solution. With the help of the pseudo code, implement the methods in ``LKH.java``. Note the methods ``findBestC`` and  ``reversePath`` are given to help you implement ``applyLKH``
 
 
-Gradescope
----------------
+..
+    Gradescope
+    ---------------
 
-On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project.
-Part of your assignment requires to report experimental results under the form of a graph.
+    On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project.
+    Part of your assignment requires to report experimental results under the form of a graph.
+
 
 
 ..

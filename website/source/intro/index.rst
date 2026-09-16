@@ -65,18 +65,19 @@ Projects and submissions
 ==============================
 
 
-Projects consist of two parts: theoretical questions or exercises to be solved by hand and a programming assignment to put everything you have learned in practice.
-To that end, the course will use two different platforms: Gradescope and Inginious.
-Below are some instructions on how to set up and use these two tools, followed by the project descriptions.
+The programming assignments put everything you have learned in practice.
+Below are some instructions on how to set up and use Inginious, followed by the project descriptions.
 
-Gradescope
-""""""""""""""""
+..
+    Gradescope
+    """"""""""""""""
 
-#. Go to `Gradescope <https://www.gradescope.com/courses/1133415>`_ and connect with your UCLouvain account.
-#. Add the LINFO2266-2025-2026 (Course ID: 1133415) course by clicking on **Enroll in Course** and entering the code D3VYJP.
-#. You will find the theoretical part of the projects there, which consist of a PDF document with a few questions.
-#. Answer these questions either by printing the document or filling it on your computer. *If you follow the instructions for the Inginious part, you will find the .tex files in the* ``tex/`` *folder of the repository so you can fill them directly.*
-#. Do not forget to submit your answers on Gradescope when you are done.
+    #. Go to `Gradescope <https://www.gradescope.com/courses/1133415>`_ and connect with your UCLouvain account.
+    #. Add the LINFO2266-2025-2026 (Course ID: 1133415) course by clicking on **Enroll in Course** and entering the code D3VYJP.
+    #. You will find the theoretical part of the projects there, which consist of a PDF document with a few questions.
+    #. Answer these questions either by printing the document or filling it on your computer. *If you follow the instructions for the Inginious part, you will find the .tex files in the* ``tex/`` *folder of the repository so you can fill them directly.*
+    #. Do not forget to submit your answers on Gradescope when you are done.
+
 
 Inginious
 """"""""""""""

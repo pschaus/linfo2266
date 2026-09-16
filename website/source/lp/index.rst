@@ -112,11 +112,13 @@ MatchingMatrices
 Given a bipartite graph, you must compute the coefficient :math:`A, b, c` for solving the maximum matching problem with the simplex implementation. 
 To retrieve your solution depending on your matrices, you must also fill in the function ``isEdgeSelected`` in addition to the constructor.
 
-Gradescope
---------------
+..
+    Gradescope
+    --------------
 
-On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project 3.
-Part of your assignment requires to report experimental results under the form of a graph.
+    On `Gradescope <https://www.gradescope.com/>`_, find the written assignment for the project 3.
+    Part of your assignment requires to report experimental results under the form of a graph.
+
 
 
 ..
