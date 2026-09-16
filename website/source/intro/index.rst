@@ -13,19 +13,82 @@ Pedagogy
 
 The presentation of the algorithms will be either proposed in the form of lectures, videos or reading and will be accompanied by practical work (assignments / micro-projects) requesting the implementation algorithms to solve a practical optimization problem and the writing of reports.
 
-Evalutation
-==============
+Evaluation
+==========
 
-January
-"""""""""
+January — First Session
+-----------------------
 
-For the first session, the overall course grade is weighted as follows: 45% projects and reports, 45% written exam, and 10% course participation.
+The January grade consists of two independent components worth 10 points each, for a total of 20 points:
 
-August
-""""""""
+* **10 points** for practical programming;
+* **10 points** for theory.
 
-For the second session, projects and reports cannot be resubmitted. 
-Only the exam component (worth 45%) can be retaken, either as an oral exam or a written exam.
+Practical Component — 10 points
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The 10 practical points can be obtained in one of two ways:
+
+* by passing the practical exam on INGInious, organized at the end of the quadrimester and lasting two hours;
+* or by passing the programming component on paper of the January exam.
+
+The INGInious exam covers the programming projects completed during the quadrimester.
+
+Failing the INGInious exam does not mean losing the 10 practical points: students can still obtain these points through the programming component on paper of the January exam.
+
+However, students are encouraged to take part in the INGInious exam and try to pass it. If they pass, the 10 practical points are secured before the January exam, allowing them to focus on the theoretical component during the paper exam and therefore reducing the amount of programming material they need to prepare.
+
+Theoretical Component — 10 points
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The 10 theoretical points are assessed during the January paper exam.
+
+The exam may include questions relating to the projects completed during the quadrimester and to their source code.
+
+August — Second Session
+-----------------------
+
+During the second session, the exam is entirely conducted on paper and is also divided into two components worth 10 points each:
+
+* **10 points** for theory;
+* **10 points** for practical programming, in the form of programming exercises on paper.
+
+The practical component of the August exam corresponds to the 10 points that were initially assessed through the INGInious exam.
+
+However, the 10 practical points corresponding to the programming component on paper in January cannot be carried over separately to August.
+
+Summary
+-------
+
+.. list-table::
+   :widths: 20 25 40 15
+   :header-rows: 1
+
+   * - Session
+     - Theory
+     - Practical
+     - Total
+   * - **January**
+     - 10 pts on paper
+     - 10 pts via INGInious or programming on paper
+     - 20 pts
+   * - **August**
+     - 10 pts on paper
+     - 10 pts of programming on paper (carry-over of the INGInious component)
+     - 20 pts
+
+Exam Conditions
+---------------
+
+All assessments are individual. No collaboration, communication, or outside assistance is permitted during the assessments.
+
+The use of generative AI is strictly prohibited during the INGInious exam as well as during the paper exams, both in January and in August.
+
+Students must therefore complete all assessments individually and without using any generative AI tools.
+
+.. note::
+   The INGInious exam is therefore a risk-free opportunity in January: if a student fails it, they can still obtain the 10 practical points through the programming component on paper in January. If they pass it, they secure this component in advance and benefit from a reduced amount of programming material to prepare for the January exam.
+
 
 Collaboration rules and AI usage policy
 ==========================================
@@ -80,7 +143,8 @@ Below are some instructions on how to set up and use Inginious, followed by the 
 
 
 Inginious
-""""""""""""""
+---------
+
 
 #. Go to `Inginious <https://inginious.info.ucl.ac.be/>`_ and connect with your UCLouvain account.
 #. Find LINFO2266 in the course list (**[LINGI 2266] Advanced Algorithms for Optimization**) and add it by clicking on **Enroll in the course**.
