@@ -19,8 +19,7 @@ This graduate-level course focuses on practical and theoretical concepts for sol
 * **Network Flows & Maximum Matching**: Graph-based flow formulations.
 * **Local Search**: Metaheuristics, neighborhoods (k-opt), tabu search, and candidate list strategies.
 * **Constraint Programming (CP)**: Filtering algorithms, domain consistency, and symmetry breaking.
-* **A* Search**: Heuristic search and anytime variants for combinatorial optimization.
-* **Benchmarking**: Rigorous empirical evaluation, Dolan-Moré performance profiles, and algorithm comparisons.
+* **Decision Diagrams (MDD)**: Branch-and-bound with relaxed and restricted Multi-valued Decision Diagrams.
 
 Course Contents
 ===============
@@ -32,6 +31,7 @@ Course Contents
 
    intro/index
    dp/index
+   bench/index
    bandb/index
    lagrangian/index
    lp/index
@@ -40,8 +40,6 @@ Course Contents
    cp/index
    astar/index
    competition/index
-   bench/index
-
 
 ..   mdd/index
 
