@@ -90,38 +90,18 @@ Students must therefore complete all assessments individually and without using 
    The INGInious exam is therefore a risk-free opportunity in January: if a student fails it, they can still obtain the 10 practical points through the programming component on paper in January. If they pass it, they secure this component in advance and benefit from a reduced amount of programming material to prepare for the January exam.
 
 
-Collaboration rules and AI usage policy
-==========================================
-
-Projects are invididual. Neverthess, In this course, we recognize the evolving nature of technology and the potential benefits of using generative AI tools in the programming process. However, academic honesty and originality remain paramount. To that end:
-
-* Generative AI Usage: Students are permitted to use generative AI tools to assist with their assignments. Such tools can provide inspiration, suggest coding approaches, or help troubleshoot issues.
-* Original Work: While AI can be a tool, it should not be the sole author of your assignment. Your submission should be primarily your own work. Directly copying and pasting solutions from AI outputs without understanding or modification is discouraged. Similarly, collaborating with fellow students is a valuable part of the learning process, but directly copying another student's work is considered plagiarism.
-* Source Indication: Whenever you use generative AI to assist in your assignment, you are required to indicate so by providing a brief comment in your code on how the AI was used. For example:
-
-.. code-block:: python
-
-	# Used AI to suggest optimization for this loop.
-	for i in range(10): ...
-	 
-
-
-Failure to adhere to these guidelines may result in a reduction of marks or other academic penalties.
-The same consequences will hold for a student that voluntarily shares his code or make available to other students (this includes sharing your code on a public or private repository).
-If deemed necessary by the instructor, an interview about the projects may also be conducted.
-
-
 Tools
-==============
-
+=====
 
 This course will use *Java* language version Java8_.
-Recommanded IDE is IntelliJ_.
+
+The recommended IDE is IntelliJ_, as this is the IDE that will be available during the practical programming test on Inginious.
 
 .. _Java8: https://docs.oracle.com/javase/8/docs/api.
 .. _IntelliJ: https://www.jetbrains.com/idea/
 .. _Inginious: https://inginious.info.ucl.ac.be
 .. _JUnit4: https://junit.org/junit4/.
+
 
 
 Projects and submissions
