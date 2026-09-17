@@ -6,12 +6,20 @@
 Organization
 ************
 
-* `Slides <../_static/slides/00-intro.pdf>`_
-
 Pedagogy
 =======================================
 
 The presentation of the algorithms will be either proposed in the form of lectures, videos or reading and will be accompanied by practical work (assignments / micro-projects) requesting the implementation algorithms to solve a practical optimization problem and the writing of reports.
+
+
+Resources and Material
+======================
+
+* **Course Textbook**: `Advanced Algorithms for Discrete Optimization <../_static/advanced_algo_opti_book.pdf>`_ (draft by Pierre Schaus)
+* **Slides**: `Introduction & Organization <../_static/slides/00-intro.pdf>`_
+
+.. note::
+   This resource is currently under construction and will be updated over the weeks.
 
 Evaluation
 ==========
